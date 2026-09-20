@@ -214,7 +214,7 @@ page = f"""<!DOCTYPE html>
 <body>
 <div class="hero">
 <h1>{content['title']}</h1>
-<div class="subtitle">三級九課 · 180 題練習 · 深度 OCR</div>
+<div class="subtitle">三級九課 · 180 題練習 · 循序漸進</div>
 <div class="meta">原著：{content['author']} ／ {content['publisher']}</div>
 </div>
 <nav class="sticky">
@@ -250,9 +250,9 @@ page = f"""<!DOCTYPE html>
 <div class="sub-section"><h3>附錄三：排盤步驟</h3>
 <p>1. 查年柱（立春為界）→ 2. 查日柱（萬年曆）→ 3. 起月柱（五虎遁）→ 4. 起時柱（五鼠遁）→ 5. 排大運 → 6. 配十神 → 7. 定旺弱（三審法）→ 8. 分喜忌（用神）。</p>
 </div>
-<div class="sub-section"><h3>附錄四：OCR 原文備份</h3>
-<p>本站內容皆由全書 128 頁掃描件深度 OCR 提取製作，原文共提取約 51,000 字。</p>
-<p><a href="appendix.html" style="display:inline-block;margin-top:10px;padding:10px 24px;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;border-radius:25px;text-decoration:none;font-weight:700">📄 查看全書 OCR 原文附錄</a></p>
+<div class="sub-section"><h3>附錄四：原文參閱資料</h3>
+<p>本站內容整理自作者羅量之命理著作，共九課核心內容，供學習參考。內容為學習筆記性質，喜愛此學問歡迎購買原書《點入八字門》（聚賢館文化有限公司出版）支持作者。</p>
+<p><a href="appendix.html" style="display:inline-block;margin-top:10px;padding:10px 24px;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;border-radius:25px;text-decoration:none;font-weight:700">📄 查看全書原文附錄</a></p>
 </div>
 </div>
 </div>
@@ -265,7 +265,7 @@ page = f"""<!DOCTYPE html>
 </div>
 <footer>
 <p>本站內容節選自 {content['author']}《{content['title']}》（{content['publisher']}），僅作教育學習參考。</p>
-<p>深度 OCR 製作 · 教學站 v3 · 2026</p>
+<p>教學資料整理 · v3 · 2026</p>
 </footer>
 <script>{JS}</script>
 </body>
