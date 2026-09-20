@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>點入八字門 — 教學站</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Noto Serif TC','Noto Sans TC',serif;background:#14121c;color:#e8e0d0;line-height:1.9;min-height:100vh}.hero{background:linear-gradient(135deg,#2a1f3d 0%,#14121c 50%,#2d1f2f 100%);text-align:center;padding:70px 20px 50px;border-bottom:2px solid #c89b3c;position:relative;overflow:hidden}.hero::before{content:"";position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at 30% 20%,rgba(200,155,60,0.08),transparent 60%);pointer-events:none}.hero h1{font-size:3rem;color:#ffd700;text-shadow:0 2px 12px rgba(255,215,0,0.35);margin-bottom:10px;letter-spacing:4px}.hero .subtitle{font-size:1.15rem;color:#b8a88a;margin-bottom:8px}.hero .author{font-size:0.9rem;color:#887a6a}.hero .tag{display:inline-block;margin-top:14px;padding:6px 18px;border:1px solid #c89b3c;border-radius:20px;color:#c89b3c;font-size:0.85rem;letter-spacing:2px}nav.sticky{position:sticky;top:0;z-index:100;background:rgba(20,18,28,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #3a3040;padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}nav.sticky a{color:#b8a88a;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:0.9rem;transition:all .2s}nav.sticky a:hover{background:#3d2f50;color:#ffd700}.container{max-width:960px;margin:0 auto;padding:20px 16px}.toc{background:#1e1a28;border:1px solid #3a3040;border-radius:12px;padding:24px;margin:24px 0}.toc h2{color:#c89b3c;font-size:1.3rem;margin-bottom:14px;text-align:center}.toc table{width:100%;border-collapse:collapse}.toc td{padding:8px;border-bottom:1px solid #2a2430;color:#d0c8b8}.toc td a{color:#e8c868;text-decoration:none}.toc td a:hover{text-decoration:underline}.toc .lv{font-weight:700;color:#ffd700;width:70px}.level-tabs{display:flex;gap:8px;margin:28px 0 20px;flex-wrap:wrap;justify-content:center}.level-tab{padding:12px 24px;border-radius:25px;cursor:pointer;font-weight:700;font-size:1rem;border:2px solid #444;background:#2a2030;color:#b8a88a;transition:all .3s}.level-tab.active{background:#3d2f50;border-color:#c89b3c;color:#ffd700;box-shadow:0 0 15px rgba(200,155,60,0.2)}.level-tab:hover{border-color:#c89b3c}.level-content{display:none}.level-content.active{display:block;animation:fadeIn .4s ease}@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.lesson-card{background:#1e1a28;border:1px solid #3a3040;border-radius:14px;padding:26px;margin-bottom:26px;scroll-margin-top:70px}.lesson-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.lesson-header h2{color:#c89b3c;font-size:1.5rem;flex:1}.lesson-badge{background:#c89b3c;color:#14121c;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:700}.objectives{background:linear-gradient(135deg,#2d3a2d,#1a2a1a);border:1px solid #4a6a3a;border-radius:10px;padding:18px;margin-bottom:22px}.objectives h3{color:#7cba5a;margin-bottom:10px;font-size:1.05rem}.objectives li{margin:6px 0 6px 18px;color:#d0c8b8}.sub-section{background:#221d2e;border-radius:10px;padding:18px 20px;margin-bottom:14px;border-left:3px solid #3a3040;transition:border-color .2s}.sub-section:hover{border-left-color:#c89b3c}.sub-section h3{color:#e8c868;font-size:1.1rem;margin-bottom:10px}.sub-section p{color:#d0c8b8;margin-bottom:10px;line-height:2}.sub-section p:last-child{margin-bottom:0}.tip{background:#2a2438;border-left:4px solid #8a6ad0;border-radius:8px;padding:14px 18px;margin:14px 0 4px}.tip strong{color:#b89ae0;display:block;margin-bottom:6px}.tip p{color:#c8b8d8;margin:0}.diagram-wrap{background:#1a1625;border:1px solid #3a3040;border-radius:10px;padding:16px;margin:18px 0;text-align:center;overflow-x:auto}.diagram-wrap svg{max-width:100%;max-height:340px}.diagram-wrap .caption{font-size:0.85rem;color:#887a6a;margin-top:8px}.quiz-box{background:#201828;border:1px solid #5a3a6a;border-radius:14px;padding:24px;margin-top:24px}.quiz-box h3{color:#d8a0f0;margin-bottom:16px;font-size:1.2rem}.quiz-q{margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #2a2430}.quiz-q:last-of-type{border-bottom:none}.quiz-q label{font-weight:600;color:#c8b8a8;display:block;margin-bottom:8px;font-size:1.02rem}.quiz-opt{display:block;padding:9px 14px;margin:5px 0;border-radius:8px;cursor:pointer;background:#2a2030;border:1px solid #444;color:#b8a88a;transition:all .15s}.quiz-opt:hover{border-color:#c89b3c;background:#352a40}.quiz-opt.selected{border-color:#c89b3c;background:#3d2f50;color:#ffd700}.quiz-opt.correct{border-color:#4a6a3a;background:#2d3a2d;color:#7cba5a;animation:pulse .4s}.quiz-opt.wrong{border-color:#6a3a3a;background:#3a2020;color:#d86060}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}.check-btn{margin-top:14px;padding:12px 30px;border:none;border-radius:25px;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;font-weight:700;font-size:1.02rem;cursor:pointer;transition:all .2s}.check-btn:hover{background:linear-gradient(135deg,#d8ab4c,#b08838);transform:translateY(-1px)}.explain{margin-top:10px;padding:12px 14px;background:#1a1a2e;border-radius:8px;color:#b8a88a;font-size:0.95rem;display:none;border-left:3px solid #5a3a6a}.explain.show{display:block;animation:fadeIn .3s}.score-bar{margin-top:16px;padding:13px 16px;background:#252030;border-radius:10px;color:#c8b8a8;font-weight:600;display:none}.score-bar.show{display:block;animation:fadeIn .3s}.back-top{position:fixed;bottom:30px;right:30px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;border:none;font-size:1.5rem;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}.back-top.show{opacity:1;pointer-events:auto}.back-top:hover{transform:translateY(-3px)}footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;border-top:1px solid #2a2430;margin-top:40px}.drawer{position:fixed;top:0;right:-320px;width:300px;height:100%;background:#1e1a28;z-index:300;transition:right .3s;padding:24px;overflow-y:auto;border-left:1px solid #c89b3c}.drawer.open{right:0}.drawer h3{color:#ffd700;margin-bottom:16px}.drawer a{display:block;color:#d0c8b8;text-decoration:none;padding:8px 0;border-bottom:1px solid #2a2430}.drawer a:hover{color:#e8c868}.menu-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;border-radius:50%;background:#3d2f50;color:#ffd700;border:1px solid #c89b3c;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:250;display:none}.overlay.show{display:block}.flow-arrow{animation:flowing 2.5s ease-in-out infinite}@keyframes flowing{0%,100%{opacity:0.4}50%{opacity:1}}@media(max-width:640px){.hero h1{font-size:2.1rem}.container{padding:14px 10px}}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Noto Serif TC','Noto Sans TC',serif;background:#14121c;color:#e8e0d0;line-height:1.9;min-height:100vh}.hero{background:linear-gradient(135deg,#2a1f3d 0%,#14121c 50%,#2d1f2f 100%);text-align:center;padding:70px 20px 50px;border-bottom:2px solid #c89b3c;position:relative;overflow:hidden}.hero::before{content:"";position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at 30% 20%,rgba(200,155,60,0.08),transparent 60%);pointer-events:none}.hero h1{font-size:3rem;color:#ffd700;text-shadow:0 2px 12px rgba(255,215,0,0.35);margin-bottom:10px;letter-spacing:4px}.hero .subtitle{font-size:1.15rem;color:#b8a88a;margin-bottom:8px}.hero .author{font-size:0.9rem;color:#887a6a}.hero .tag{display:inline-block;margin-top:14px;padding:6px 18px;border:1px solid #c89b3c;border-radius:20px;color:#c89b3c;font-size:0.85rem;letter-spacing:2px}nav.sticky{position:sticky;top:0;z-index:100;background:rgba(20,18,28,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #3a3040;padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}nav.sticky a{color:#b8a88a;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:0.9rem;transition:all .2s}nav.sticky a:hover{background:#3d2f50;color:#ffd700}.container{max-width:960px;margin:0 auto;padding:20px 16px}.toc{background:#1e1a28;border:1px solid #3a3040;border-radius:12px;padding:24px;margin:24px 0}.toc h2{color:#c89b3c;font-size:1.3rem;margin-bottom:14px;text-align:center}.toc table{width:100%;border-collapse:collapse}.toc td{padding:8px;border-bottom:1px solid #2a2430;color:#d0c8b8}.toc td a{color:#e8c868;text-decoration:none}.toc td a:hover{text-decoration:underline}.toc .lv{font-weight:700;color:#ffd700;width:70px}.level-tabs{display:flex;gap:8px;margin:28px 0 20px;flex-wrap:wrap;justify-content:center}.level-tab{padding:12px 24px;border-radius:25px;cursor:pointer;font-weight:700;font-size:1rem;border:2px solid #444;background:#2a2030;color:#b8a88a;transition:all .3s}.level-tab.active{background:#3d2f50;border-color:#c89b3c;color:#ffd700;box-shadow:0 0 15px rgba(200,155,60,0.2)}.level-tab:hover{border-color:#c89b3c}.level-content{display:none}.level-content.active{display:block;animation:fadeIn .4s ease}@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.lesson-card{background:#1e1a28;border:1px solid #3a3040;border-radius:14px;padding:26px;margin-bottom:26px;scroll-margin-top:70px}.lesson-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.lesson-header h2{color:#c89b3c;font-size:1.5rem;flex:1}.lesson-badge{background:#c89b3c;color:#14121c;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:700}.objectives{background:linear-gradient(135deg,#2d3a2d,#1a2a1a);border:1px solid #4a6a3a;border-radius:10px;padding:18px;margin-bottom:22px}.objectives h3{color:#7cba5a;margin-bottom:10px;font-size:1.05rem}.objectives li{margin:6px 0 6px 18px;color:#d0c8b8}.sub-section{background:#221d2e;border-radius:10px;padding:18px 20px;margin-bottom:14px;border-left:3px solid #3a3040;transition:border-color .2s}.sub-section:hover{border-left-color:#c89b3c}.sub-section h3{color:#e8c868;font-size:1.1rem;margin-bottom:10px}.sub-section p{color:#d0c8b8;margin-bottom:10px;line-height:2}.sub-section p:last-child{margin-bottom:0}.tip{background:#2a2438;border-left:4px solid #8a6ad0;border-radius:8px;padding:14px 18px;margin:14px 0 4px}.tip strong{color:#b89ae0;display:block;margin-bottom:6px}.tip p{color:#c8b8d8;margin:0}.diagram-wrap{background:#1a1625;border:1px solid #3a3040;border-radius:10px;padding:16px;margin:18px 0;text-align:center;overflow-x:auto}.diagram-wrap svg{max-width:100%;max-height:340px}.diagram-wrap .caption{font-size:0.85rem;color:#887a6a;margin-top:8px}.quiz-box{background:#201828;border:1px solid #5a3a6a;border-radius:14px;padding:24px;margin-top:24px}.quiz-box h3{color:#d8a0f0;margin-bottom:16px;font-size:1.2rem}.quiz-q{margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #2a2430}.quiz-q:last-of-type{border-bottom:none}.quiz-q label{font-weight:600;color:#c8b8a8;display:block;margin-bottom:8px;font-size:1.02rem}.quiz-opt{display:block;padding:9px 14px;margin:5px 0;border-radius:8px;cursor:pointer;background:#2a2030;border:1px solid #444;color:#b8a88a;transition:all .15s}.quiz-opt:hover{border-color:#c89b3c;background:#352a40}.quiz-opt.selected{border-color:#c89b3c;background:#3d2f50;color:#ffd700}.quiz-opt.correct{border-color:#4a6a3a;background:#2d3a2d;color:#7cba5a;animation:pulse .4s}.quiz-opt.wrong{border-color:#6a3a3a;background:#3a2020;color:#d86060}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}.check-btn{margin-top:14px;padding:12px 30px;border:none;border-radius:25px;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;font-weight:700;font-size:1.02rem;cursor:pointer;transition:all .2s}.check-btn:hover{background:linear-gradient(135deg,#d8ab4c,#b08838);transform:translateY(-1px)}.explain{margin-top:10px;padding:12px 14px;background:#1a1a2e;border-radius:8px;color:#b8a88a;font-size:0.95rem;display:none;border-left:3px solid #5a3a6a}.explain.show{display:block;animation:fadeIn .3s}.score-bar{margin-top:16px;padding:13px 16px;background:#252030;border-radius:10px;color:#c8b8a8;font-weight:600;display:none}.score-bar.show{display:block;animation:fadeIn .3s}.back-top{position:fixed;bottom:30px;right:30px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;border:none;font-size:1.5rem;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}.back-top.show{opacity:1;pointer-events:auto}.back-top:hover{transform:translateY(-3px)}footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;border-top:1px solid #2a2430;margin-top:40px}.drawer{position:fixed;top:0;right:-320px;width:300px;height:100%;background:#1e1a28;z-index:300;transition:right .3s;padding:24px;overflow-y:auto;border-left:1px solid #c89b3c}.drawer.open{right:0}.drawer h3{color:#ffd700;margin-bottom:16px}.drawer a{display:block;color:#d0c8b8;text-decoration:none;padding:8px 0;border-bottom:1px solid #2a2430}.drawer a:hover{color:#e8c868}.menu-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;border-radius:50%;background:#3d2f50;color:#ffd700;border:1px solid #c89b3c;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:250;display:none}.overlay.show{display:block}.flow-arrow{animation:flowing 2.5s ease-in-out infinite}@keyframes flowing{0%,100%{opacity:0.4}50%{opacity:1}}.flow-arrow2{animation:flowing 3s ease-in-out infinite 0.5s}@media(max-width:640px){.hero h1{font-size:2.1rem}.container{padding:14px 10px}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -47,6 +47,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 八字的起源</h3>
 <p>八字命理是中國古代算命術的一種，始於漢，成於唐宋，盛於明清，至今不衰。八字是人出生的「時辰」，所以又叫「生辰八字」。人的出生時辰，紀以年、月、日、時，用以表述年月日時的叫做曆法。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】「八字」就像身分證號碼：年月日時各配一組天干地支，四組共八個字，記錄了你出生那一刻的「時空坐標」。古人相信這個坐標能反映先天的性格與運勢。</p></div>
 </div>
 <div class="sub-section"><h3>2. 甲曆與干支</h3>
 <p>甲曆是甲子曆的簡稱，又稱干支曆。它由十個天干和十二個地支組成，一個天干輪配一個地支，天干在上，地支在下，一共配出六十個干支組合，用以紀年、紀月、紀日和紀時。生辰八字的年月日時以甲曆為紀，由六十組干支構成了年柱、月柱、日柱和時柱，所以八字算命又叫四柱算命。</p>
@@ -98,6 +99,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 十天干</h3>
 <p>甲、乙、丙、丁、戊、己、庚、辛、壬、癸。天干配五行：甲乙屬木，丙丁屬火，戊己屬土，庚辛屬金，壬癸屬水。天干配陰陽：甲、丙、戊、庚、壬屬陽，乙、丁、己、辛、癸屬陰。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】把十天干想像成十種性格標籤：甲是參天大樹（棟梁）、乙是花草藤蔓（柔韌）、丙是太陽（光明）、丁是燭火（細膩）……五行是底色，陰陽是明暗，組合成每個字獨特的屬性。</p></div>
 </div>
 <div class="sub-section"><h3>2. 十二地支</h3>
 <p>子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。地支配五行：亥子屬水，寅卯屬木，巳午屬火，申酉屬金，辰戌丑未屬土。地支配陰陽：子寅辰午申戌為陽，丑卯巳未酉亥為陰。</p>
@@ -142,6 +144,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 起年柱</h3>
 <p>年柱以立春（約國曆二月四日）為分界，非以農曆正月初一。例如，國曆二月三日出生，即使已過農曆新年，年柱仍屬上一年。一九四一年至一九七九年在香港出生的人，出生的月份又恰好是三月至十一月之內，他的出生時間大多數記以夏令時間，需注意撥慢一小時。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】排四柱就像填一張「出生時間表」：年柱看立春（不是元旦！）、月柱看節氣（不是農曆初一！）、日柱查萬年曆、時柱用口訣推。記住「立春分年、節氣分月」就成功了一半。</p></div>
 </div>
 <div class="sub-section"><h3>2. 起月柱</h3>
 <p>月柱以節氣（節）為分界。一年十二個節氣，配十二地支。正月建寅，二月建卯，三月建辰……十二月建丑。月柱可用「五虎遁年起月」口訣推算：甲己之年丙作首，乙庚之歲戊為頭，丙辛歲首尋庚起，丁壬壬位順行流，戊癸何方發，甲寅之上好追求。</p>
@@ -195,6 +198,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 五行基礎</h3>
 <p>五行：木、火、土、金、水。分陰陽兩類，配入十天干：甲—陽木（棟梁之材）、乙—陰木（生氣之木）、丙—陽火（太陽之氣）、丁—陰火（凡間之火）、戊—陽土（堤岸城牆）、己—陰土（田園之土）、庚—陽金（刀斧之金）、辛—陰金（珠玉之金）、壬—陽水（江河之水）、癸—陰水（雨露之水）。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】五行相生像接力賽：木燒成火（木生火）、火燒成灰土（火生土）、土裡挖出礦（土生金）、礦融成水液（金生水）、水澆灌樹木（水生木）——循環不息。相剋像互相制衡：刀砍木（金剋木）、樹根裂土（木剋土）、土擋水（土剋水）、水滅火（水剋火）、火熔金（火剋金）。</p></div>
 </div>
 <div class="sub-section"><h3>2. 五行相生</h3>
 <p>相生順序：木生火、火生土、土生金、金生水、水生木。以任何一行為「我」，生我者為母（印），我生者為子（食傷）。例如以木為我，水生木（水是母/印），木生火（火是子/食傷）。</p>
@@ -220,17 +224,17 @@
   <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
   <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
   <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
+  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
+  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
+  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
   <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
+  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
   <!-- Legend -->
   <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
   <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
@@ -247,6 +251,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 十神定義</h3>
 <p>十神是日元（日柱天干）與其他干支五行生剋關係的名稱：比肩、劫財（同我）、食神、傷官（我生）、正財、偏財（我剋）、正官、七殺（剋我）、正印、偏印（生我）。比肩與劫財的區別：比肩是同性相見（如甲見甲），劫財是異性相見（如甲見乙）。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】十神是「以我為中心」看人際關係：生我的像父母（印）、我生的像子女（食傷）、剋我的像上司壓力（官殺）、我剋的像錢財資源（財）、同我的像兄弟朋友（比劫）。你站在日主的位置，看其他七個字跟你甚麼關係，就是十神。</p></div>
 </div>
 <div class="sub-section"><h3>2. 十神的意義</h3>
 <p>比肩：代表兄弟、朋友、競爭。劫財：代表異性兄弟、競爭對手。食神：代表才華、口福、子女（女命）。傷官：代表智慧、名譽、反叛。正財：代表穩定收入、妻星（男命）。偏財：代表意外之財、父星。正官：代表職位、權力、夫星（女命）。七殺：代表壓力、挑戰、權威。正印：代表學問、母星、保護。偏印：代表偏門學問、繼母。</p>
@@ -302,6 +307,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 天干五合</h3>
 <p>甲己合化土、乙庚合化金、丙辛合化水、丁壬合化木、戊癸合化火。五合是陰陽之合，一個陰干配一個陽干，二者五行本來相剋，因陰陽相吸而由剋變合。合化條件：鄰干作合、月提引化、化神透干。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】「合」像兩個人結婚——性格變了（甲己合化土），「沖」像兩個人吵架——天翻地覆（子午沖）。合化有條件：要鄰居（鄰干）、要媒人（月提引化）、要證婚（化神透干），三者齊備才成「化」。</p></div>
 </div>
 <div class="sub-section"><h3>2. 地支六合</h3>
 <p>子丑合化土、寅亥合化木、卯戌合化火、辰酉合金、巳申合化水、午未合火土。六合也是一陰支配一陽支，以方位對配而作合。合化條件：天干見化神透出方可成化。</p>
@@ -327,17 +333,17 @@
   <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
   <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
   <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
+  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
+  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
+  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
   <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
+  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
   <!-- Legend -->
   <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
   <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
@@ -353,6 +359,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 格局分類</h3>
 <p>八字格局只分兩大類：正格——局內有自黨又有異黨，日主不是身旺就是身弱；特格——局內全是自黨或全是異黨，日主極旺（專旺格）或極弱（從格）。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】定身旺身弱就像量體溫：月令（審令）是體溫計，地支（審地）是床的軟硬，天干（審勢）是蓋的被子厚薄。三項量完，自黨（幫你的人）多就是身旺，異黨（消耗你的人）多就是身弱。</p></div>
 </div>
 <div class="sub-section"><h3>2. 三審法</h3>
 <p>定正格衰旺的基本法則叫「三審」：審令（月令）——日元生於自黨月令叫得令，生於異黨月令叫失令；審地（地支）——其餘三個地支自黨多叫得地；審勢（天干）——其餘三個天干自黨多叫得勢。三失其二以上為身弱。</p>
@@ -433,17 +440,17 @@
   <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
   <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
   <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
+  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
+  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
+  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
+  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
   <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)"/>
+  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
   <!-- Legend -->
   <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
   <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
@@ -460,6 +467,7 @@
 </ul></div>
 <div class="sub-section"><h3>1. 好命條件</h3>
 <p>好命四條件：1. 五行中和——十神印劫傷財官樣樣都有；2. 秀氣流行——天干地支八字沿一個方向順或逆生下去；3. 用神有力——用神在天干透出且地支有根；4. 少剋沖刑伏合——四柱之間沒有太多衝突。</p>
+<div class="tip"><strong>📌 概念舉例</strong><p>【淺白理解】看一個八字好不好，先看四件事：五行齊不齊（中和）、能量順不順（秀氣流行）、用神強不強（用神有力）、衝突多不多（少剋沖刑）。四樣都好就是好命——但大富大貴反而常是五行不全的「特殊命格」，靠用神力挽狂瀾。</p></div>
 </div>
 <div class="sub-section"><h3>2. 富命與貧命</h3>
 <p>判斷原則：正格身旺以正財偏財代表財富；正格身弱以劫財比肩代表財富。專旺格以劫比代表財富；從格以財才代表財富。原局財星透干根強，歲運又見財星干支同氣，便是富命。原局不見財星，歲運又無財星運，便是貧命。</p>
