@@ -115,7 +115,7 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 <div class="level-tab" onclick="showLevel('lv3',this)">🧭 高級（第7-9課）</div>
 </div>
 
-<div id="lv1" class="level-content"><div class="lesson-card" id="lesson1">
+<div id="lv1" class="level-content active"><div class="lesson-card" id="lesson1">
 <div class="lesson-header"><span class="lesson-badge">第1課</span><h2>第一課：認識八字</h2></div>
 <div class="objectives"><h3>🎯 學習目標</h3><ul>
 <li>理解八字命理的歷史背景與基本原理</li>
@@ -143,7 +143,7 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 </div>
 <div class="sub-section"><h3>3. 六十甲子</h3><p>將一個天干和一個地支輪番配對，便可以配成六十甲子。先配第一輪：甲配子，乙配丑，丙配寅……癸配酉；再由甲配戌，乙配亥。六十甲子可分成五組：第一組由甲子開始，第二組由丙子開始，第三組由戊子開始，第四組由庚子開始，第五組由壬子開始。</p>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz1"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz2"></div></div>
 </div>
 <div class="lesson-card" id="lesson3">
 <div class="lesson-header"><span class="lesson-badge">第3課</span><h2>第三課：排四柱</h2></div>
@@ -161,9 +161,9 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 </div>
 <div class="sub-section"><h3>4. 起時柱</h3><p>時柱可用「五鼠遁日起時」口訣推算：甲己還加甲，乙庚丙子初，丙辛從戊起，丁壬庚子居，戊癸何方發，壬子是真途。一個時辰等於兩小時。子時——午夜十一時至一時，丑時——一時至三時，寅時——三時至五時，以此類推。</p>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz1"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz3"></div></div>
 </div></div>
-<div id="lv2" class="level-content"><div class="lesson-card" id="lesson4">
+<div id="lv2" class="level-content "><div class="lesson-card" id="lesson4">
 <div class="lesson-header"><span class="lesson-badge">第4課</span><h2>第四課：五行生剋</h2></div>
 <div class="objectives"><h3>🎯 學習目標</h3><ul>
 <li>掌握五行（木火土金水）的基礎概念</li>
@@ -193,7 +193,7 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 </div>
 <div class="sub-section"><h3>3. 自黨與異黨</h3><p>將十神分兩大派：自黨——同我（比肩、劫財）和生我（正印、偏印）；異黨——剋我（正官、七殺）、我剋（正財、偏財）、我生（食神、傷官）。身旺者以異黨為喜、自黨為忌；身弱者反之。</p>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz5"></div></div>
 </div>
 <div class="lesson-card" id="lesson6">
 <div class="lesson-header"><span class="lesson-badge">第6課</span><h2>第六課：合化沖合</h2></div>
@@ -210,9 +210,9 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 </div>
 <div class="sub-section"><h3>4. 合化的意義</h3><p>合化後，原本的喜神可能變成忌神，原本的忌神也可能變成喜神。例如命局以金為喜，乙庚合化金，則乙木運可能由忌變喜。因此起盤算命之前，原局的干支合化一樣不能草率了事。</p>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz6"></div></div>
 </div></div>
-<div id="lv3" class="level-content"><div class="lesson-card" id="lesson7">
+<div id="lv3" class="level-content "><div class="lesson-card" id="lesson7">
 <div class="lesson-header"><span class="lesson-badge">第7課</span><h2>第七課：定格局</h2></div>
 <div class="objectives"><h3>🎯 學習目標</h3><ul>
 <li>學會用三審法判斷身旺身弱</li>
@@ -243,7 +243,7 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 <div class="sub-section"><h3>3. 病藥用神</h3><p>八字命局以中和為貴。古書云：「有病方為貴。」所謂病，是指八字格局有「病」，缺五行是其中一種病。當歲運遇到「藥」的時候，病便會痊癒了。例如八字五行欠木，就是病，那麼木也就是藥了。當歲運見木（甲乙寅卯），那就是藥到病除的時候了。</p>
 <div class="example-box"><strong>📌 概念舉例：</strong>【應用】改名也可以用病藥原理。五行欠水，改個三點水的名字；五行欠金，改個金字旁的名字。另一種病是正格的身旺病或身弱病——身旺宜剋泄，異黨是藥；身弱宜幫扶，自黨是藥。</div>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz8"></div></div>
 </div>
 <div class="lesson-card" id="lesson9">
 <div class="lesson-header"><span class="lesson-badge">第9課</span><h2>第九課：實戰論命</h2></div>
@@ -260,7 +260,7 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 </div>
 <div class="sub-section"><h3>4. 斷事要訣</h3><p>六親：印代表母，財代表妻/父，官殺代表子女（男命），傷食代表子女（女命）。財運：身旺歲運財透有根主財至；身弱歲運劫比透有根主財至。婚姻：女命見官殺歲運緣至；男命見財才歲運緣至。健康：身弱再遇傷食財才重泄主慢性病；財生官殺重剋日主是血光手術。</p>
 </div>
-<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz9"></div></div>
 </div></div>
 
 <div id="appendix" class="lesson-card">

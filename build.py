@@ -84,10 +84,10 @@ footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;borde
 """
 
 # Build function for lessons HTML
-def render_lesson(lv_idx, lesson, lv_id):
+def render_lesson(lv_idx, lesson, lv_id, lesson_num):
     parts = []
     parts.append(f'<div class="lesson-card" id="{lesson["id"]}">')
-    parts.append(f'<div class="lesson-header"><span class="lesson-badge">第{lv_idx*3+1+content["levels"][lv_idx]["lessons"].index(lesson)}課</span><h2>{lesson["title"]}</h2></div>')
+    parts.append(f'<div class="lesson-header"><span class="lesson-badge">第{lesson_num}課</span><h2>{lesson["title"]}</h2></div>')
     # Objectives
     parts.append('<div class="objectives"><h3>🎯 學習目標</h3><ul>')
     for o in lesson['objectives']:
@@ -102,8 +102,7 @@ def render_lesson(lv_idx, lesson, lv_id):
         parts.append('</div>')
         qn += 1
     # Quiz
-    ln = lv_idx*3 + 1
-    qid = f'quiz{ln}'
+    qid = f'quiz{lesson_num}'
     parts.append(f'<div class="quiz-box"><h3>📝 課後練習（{len(quizzes[qid])} 題）</h3><div id="{qid}"></div></div>')
     parts.append('</div>')
     return '\n'.join(parts)
@@ -132,8 +131,9 @@ levels_html = []
 for lv_idx, lv in enumerate(content['levels']):
     inner = []
     for lesson in lv['lessons']:
-        inner.append(render_lesson(lv_idx, lesson, lv['id']))
-    body = f'<div id="{lv["id"]}" class="level-content">' + '\n'.join(inner) + '</div>'
+        inner.append(render_lesson(lv_idx, lesson, lv['id'], lv_idx*3 + lv['lessons'].index(lesson) + 1))
+    cls = "active" if lv_idx == 0 else ""
+    body = f'<div id="{lv["id"]}" class="level-content {cls}">' + '\n'.join(inner) + '</div>'
     levels_html.append(body)
 levels_body = '\n'.join(levels_html)
 
