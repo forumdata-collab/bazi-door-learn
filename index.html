@@ -208,35 +208,57 @@
 <div class="sub-section"><h3>4. 十二長生</h3>
 <p>十二長生：長生、沐浴、冠帶、臨官、帝旺、衰、病、死、墓、絕、胎、養。描述五行在不同階段的旺衰狀態。如甲木長生在亥，沐浴在子，冠帶在丑，臨官在寅，帝旺在卯……</p>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" font-family="'Noto Sans TC',sans-serif">
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" font-family="'Noto Sans TC',sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c89b3c"/></marker>
-    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker>
-    <filter id="glow"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/>
+    </linearGradient>
+    <radialGradient id="woodG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#3a8a3a"/><stop offset="100%" stop-color="#1e4a1e"/></radialGradient>
+    <radialGradient id="fireG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ff8a4a"/><stop offset="100%" stop-color="#8a3010"/></radialGradient>
+    <radialGradient id="earthG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e0b050"/><stop offset="100%" stop-color="#7a5a10"/></radialGradient>
+    <radialGradient id="metalG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#d0d0e8"/><stop offset="100%" stop-color="#5a5a7a"/></radialGradient>
+    <radialGradient id="waterG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#50a0e0"/><stop offset="100%" stop-color="#103060"/></radialGradient>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c8a050"/></marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#e06050"/></marker>
+    <filter id="softShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/></filter>
   </defs>
-  <rect width="500" height="420" rx="16" fill="#1a1520"/>
-  <text x="250" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">五行生剋圖</text>
-  <!-- Nodes -->
-  <circle cx="250" cy="90" r="38" fill="#2a5a2a" stroke="#4a9a4a" stroke-width="2"/><text x="250" y="96" text-anchor="middle" fill="#7cda7c" font-size="22" font-weight="bold">木</text>
-  <circle cx="400" cy="200" r="38" fill="#5a2a1a" stroke="#da6a3a" stroke-width="2"/><text x="400" y="206" text-anchor="middle" fill="#ff9a6a" font-size="22" font-weight="bold">火</text>
-  <circle cx="350" cy="340" r="38" fill="#5a4a2a" stroke="#c89b3c" stroke-width="2"/><text x="350" y="346" text-anchor="middle" fill="#ffd700" font-size="22" font-weight="bold">土</text>
-  <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
-  <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
-  <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
-  <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <rect width="520" height="460" rx="18" fill="url(#bgGrad)" stroke="#3a3040" stroke-width="1"/>
+  <text x="260" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">五行生剋關係圖</text>
+  <text x="260" y="60" text-anchor="middle" fill="#887a6a" font-size="12">實線＝相生（順生循環）・虛線＝相剋（隔位制衡）</text>
+  <!-- Element nodes -->
+  <g filter="url(#softShadow)">
+    <circle cx="260" cy="105" r="42" fill="url(#woodG)" stroke="#6aba6a" stroke-width="2"/><text x="260" y="112" text-anchor="middle" fill="#d8ffd8" font-size="26" font-weight="bold">木</text>
+    <circle cx="420" cy="215" r="42" fill="url(#fireG)" stroke="#ff9a5a" stroke-width="2"/><text x="420" y="222" text-anchor="middle" fill="#ffe0c8" font-size="26" font-weight="bold">火</text>
+    <circle cx="350" cy="355" r="42" fill="url(#earthG)" stroke="#e0c060" stroke-width="2"/><text x="350" y="362" text-anchor="middle" fill="#3a2a00" font-size="26" font-weight="bold">土</text>
+    <circle cx="170" cy="355" r="42" fill="url(#metalG)" stroke="#c0c0d8" stroke-width="2"/><text x="170" y="362" text-anchor="middle" fill="#2a2a3a" font-size="26" font-weight="bold">金</text>
+    <circle cx="100" cy="215" r="42" fill="url(#waterG)" stroke="#70b8f0" stroke-width="2"/><text x="100" y="222" text-anchor="middle" fill="#d8f0ff" font-size="26" font-weight="bold">水</text>
+  </g>
+  <!-- 生 arrows (gold solid, animated) -->
+  <path d="M288,130 Q355,138 392,180" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="352" y="142" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M428,257 Q418,295 390,322" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="428" y="290" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M318,375 Q260,405 205,375" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="260" y="410" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M145,322 Q120,290 108,255" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="98" y="295" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M132,190 Q160,145 230,115" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="150" y="140" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <!-- 剋 arrows (red dashed) -->
+  <line x1="265" y1="147" x2="335" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="390" y1="340" x2="135" y2="235" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="100" y1="255" x2="240" y2="110" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="275" y1="145" x2="185" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="125" y1="190" x2="375" y2="345" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
   <!-- Legend -->
-  <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
-  <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
+  <g>
+    <rect x="70" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="82" y1="437" x2="108" y2="437" stroke="#c8a050" stroke-width="2.5"/>
+    <text x="115" y="441" fill="#b8a88a" font-size="11">相生（順）</text>
+    <rect x="310" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="322" y1="437" x2="348" y2="437" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5"/>
+    <text x="355" y="441" fill="#b8a88a" font-size="11">相剋（隔）</text>
+  </g>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
@@ -258,41 +280,56 @@
 <div class="sub-section"><h3>3. 自黨與異黨</h3>
 <p>將十神分兩大派：自黨——同我（比肩、劫財）和生我（正印、偏印）；異黨——剋我（正官、七殺）、我剋（正財、偏財）、我生（食神、傷官）。身旺者以異黨為喜、自黨為忌；身弱者反之。</p>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Noto Sans TC',sans-serif">
-  <rect width="600" height="450" rx="16" fill="#1a1520"/>
-  <text x="300" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">十神關係圖（以日主為中心）</text>
-  <!-- Central circle -->
-  <circle cx="300" cy="230" r="50" fill="#3d2f50" stroke="#ffd700" stroke-width="3"/><text x="300" y="225" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">日主</text><text x="300" y="245" text-anchor="middle" fill="#d8a0f0" font-size="12">（我）</text>
-  <!-- 5 relationships, positioned around -->
-  <!-- 生我 (印) - top -->
-  <rect x="245" y="50" width="110" height="55" rx="10" fill="#2d3a2d" stroke="#4a9a4a" stroke-width="1.5"/>
-  <text x="300" y="72" text-anchor="middle" fill="#7cba5a" font-size="14" font-weight="bold">生我 → 印星</text>
-  <text x="300" y="92" text-anchor="middle" fill="#a0c080" font-size="11">正印・偏印</text>
-  <line x1="300" y1="105" x2="300" y2="180" stroke="#4a9a4a" stroke-width="2" marker-end="url(#arr-g)"/>
-  <defs><marker id="arr-g" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#4a9a4a"/></marker></defs>
-  <!-- 我生 (食傷) - bottom -->
-  <rect x="230" y="370" width="140" height="55" rx="10" fill="#2a2438" stroke="#8a6ad0" stroke-width="1.5"/>
-  <text x="300" y="392" text-anchor="middle" fill="#b89ae0" font-size="14" font-weight="bold">我生 → 食傷</text>
-  <text x="300" y="412" text-anchor="middle" fill="#a090c0" font-size="11">食神・傷官</text>
-  <defs><marker id="arr-p" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#8a6ad0"/></marker></defs>
-  <line x1="300" y1="280" x2="300" y2="368" stroke="#8a6ad0" stroke-width="2" marker-end="url(#arr-p)"/>
-  <!-- 剋我 (官殺) - left -->
-  <rect x="30" y="200" width="110" height="55" rx="10" fill="#3a2020" stroke="#d86060" stroke-width="1.5"/>
-  <text x="85" y="222" text-anchor="middle" fill="#d88080" font-size="14" font-weight="bold">剋我 → 官殺</text>
-  <text x="85" y="242" text-anchor="middle" fill="#c09090" font-size="11">正官・七殺</text>
-  <defs><marker id="arr-r" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker></defs>
-  <line x1="140" y1="230" x2="248" y2="230" stroke="#d86060" stroke-width="2" marker-end="url(#arr-r)"/>
-  <!-- 我剋 (財才) - right -->
-  <rect x="460" y="200" width="110" height="55" rx="10" fill="#5a4a2a" stroke="#c89b3c" stroke-width="1.5"/>
-  <text x="515" y="222" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">我剋 → 財星</text>
-  <text x="515" y="242" text-anchor="middle" fill="#c8b88a" font-size="11">正財・偏財</text>
-  <line x1="352" y1="230" x2="458" y2="230" stroke="#c89b3c" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- 同我 (比劫) - top-right -->
-  <rect x="420" y="80" width="110" height="55" rx="10" fill="#2a2040" stroke="#9a80d0" stroke-width="1.5"/>
-  <text x="475" y="102" text-anchor="middle" fill="#b8a0e0" font-size="14" font-weight="bold">同我 → 比劫</text>
-  <text x="475" y="122" text-anchor="middle" fill="#a090c0" font-size="11">比肩・劫財</text>
-  <defs><marker id="arr-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#9a80d0"/></marker></defs>
-  <path d="M345,180 Q390,130 418,108" fill="none" stroke="#9a80d0" stroke-width="2" marker-end="url(#arr-b)"/>
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="'Noto Sans TC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/></linearGradient>
+    <radialGradient id="centerG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4a3a6a"/><stop offset="100%" stop-color="#2a1f3d"/></radialGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/></filter>
+  </defs>
+  <rect width="620" height="460" rx="18" fill="url(#bg)" stroke="#3a3040" stroke-width="1"/>
+  <text x="310" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">十神關係圖（以日主為中心）</text>
+  <!-- Center: 日主 -->
+  <circle cx="310" cy="235" r="48" fill="url(#centerG)" stroke="#ffd700" stroke-width="3" filter="url(#ds)"/>
+  <text x="310" y="228" text-anchor="middle" fill="#ffd700" font-size="17" font-weight="bold">日主</text>
+  <text x="310" y="248" text-anchor="middle" fill="#b89ae0" font-size="11">（我）</text>
+  <!-- 生我 → 印星 (top) -->
+  <g filter="url(#ds)">
+    <rect x="240" y="52" width="140" height="52" rx="12" fill="#1e3a1e" stroke="#4a8a3a" stroke-width="1.5"/>
+    <text x="310" y="74" text-anchor="middle" fill="#7cba5a" font-size="15" font-weight="bold">生我 → 印星</text>
+    <text x="310" y="92" text-anchor="middle" fill="#a0c080" font-size="10">正印・偏印</text>
+  </g>
+  <line x1="310" y1="104" x2="310" y2="187" stroke="#4a8a3a" stroke-width="2" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <!-- 我生 → 食傷 (bottom) -->
+  <g filter="url(#ds)">
+    <rect x="230" y="392" width="160" height="52" rx="12" fill="#2a1a3a" stroke="#7a5ac0" stroke-width="1.5"/>
+    <text x="310" y="414" text-anchor="middle" fill="#a080e0" font-size="15" font-weight="bold">我生 → 食傷</text>
+    <text x="310" y="432" text-anchor="middle" fill="#8870b0" font-size="10">食神・傷官</text>
+  </g>
+  <line x1="310" y1="283" x2="310" y2="390" stroke="#7a5ac0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 剋我 → 官殺 (left) -->
+  <g filter="url(#ds)">
+    <rect x="20" y="208" width="130" height="52" rx="12" fill="#3a1a1a" stroke="#c05050" stroke-width="1.5"/>
+    <text x="85" y="230" text-anchor="middle" fill="#e07070" font-size="15" font-weight="bold">剋我 → 官殺</text>
+    <text x="85" y="248" text-anchor="middle" fill="#c08080" font-size="10">正官・七殺</text>
+  </g>
+  <line x1="150" y1="235" x2="260" y2="235" stroke="#c05050" stroke-width="2" marker-end="url(#arrowR)"/>
+  <!-- 我剋 → 財星 (right) -->
+  <g filter="url(#ds)">
+    <rect x="470" y="208" width="130" height="52" rx="12" fill="#3a3018" stroke="#c8a040" stroke-width="1.5"/>
+    <text x="535" y="230" text-anchor="middle" fill="#ffd700" font-size="15" font-weight="bold">我剋 → 財星</text>
+    <text x="535" y="248" text-anchor="middle" fill="#c8b888" font-size="10">正財・偏財</text>
+  </g>
+  <line x1="358" y1="235" x2="468" y2="235" stroke="#c8a040" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 同我 → 比劫 (top-right) -->
+  <g filter="url(#ds)">
+    <rect x="450" y="72" width="130" height="52" rx="12" fill="#1e1838" stroke="#8070b0" stroke-width="1.5"/>
+    <text x="515" y="94" text-anchor="middle" fill="#a090d0" font-size="15" font-weight="bold">同我 → 比劫</text>
+    <text x="515" y="112" text-anchor="middle" fill="#9080b0" font-size="10">比肩・劫財</text>
+  </g>
+  <path d="M340,192 Q400,135 448,98" fill="none" stroke="#8070b0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- Relationship cycle labels -->
+  <text x="195" y="170" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(-50,195,170)">相生循環</text>
+  <text x="420" y="320" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(50,420,320)">相剋循環</text>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz5"></div></div>
@@ -317,35 +354,57 @@
 <div class="sub-section"><h3>4. 合化的意義</h3>
 <p>合化後，原本的喜神可能變成忌神，原本的忌神也可能變成喜神。例如命局以金為喜，乙庚合化金，則乙木運可能由忌變喜。因此起盤算命之前，原局的干支合化一樣不能草率了事。</p>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" font-family="'Noto Sans TC',sans-serif">
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" font-family="'Noto Sans TC',sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c89b3c"/></marker>
-    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker>
-    <filter id="glow"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/>
+    </linearGradient>
+    <radialGradient id="woodG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#3a8a3a"/><stop offset="100%" stop-color="#1e4a1e"/></radialGradient>
+    <radialGradient id="fireG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ff8a4a"/><stop offset="100%" stop-color="#8a3010"/></radialGradient>
+    <radialGradient id="earthG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e0b050"/><stop offset="100%" stop-color="#7a5a10"/></radialGradient>
+    <radialGradient id="metalG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#d0d0e8"/><stop offset="100%" stop-color="#5a5a7a"/></radialGradient>
+    <radialGradient id="waterG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#50a0e0"/><stop offset="100%" stop-color="#103060"/></radialGradient>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c8a050"/></marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#e06050"/></marker>
+    <filter id="softShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/></filter>
   </defs>
-  <rect width="500" height="420" rx="16" fill="#1a1520"/>
-  <text x="250" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">五行生剋圖</text>
-  <!-- Nodes -->
-  <circle cx="250" cy="90" r="38" fill="#2a5a2a" stroke="#4a9a4a" stroke-width="2"/><text x="250" y="96" text-anchor="middle" fill="#7cda7c" font-size="22" font-weight="bold">木</text>
-  <circle cx="400" cy="200" r="38" fill="#5a2a1a" stroke="#da6a3a" stroke-width="2"/><text x="400" y="206" text-anchor="middle" fill="#ff9a6a" font-size="22" font-weight="bold">火</text>
-  <circle cx="350" cy="340" r="38" fill="#5a4a2a" stroke="#c89b3c" stroke-width="2"/><text x="350" y="346" text-anchor="middle" fill="#ffd700" font-size="22" font-weight="bold">土</text>
-  <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
-  <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
-  <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
-  <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <rect width="520" height="460" rx="18" fill="url(#bgGrad)" stroke="#3a3040" stroke-width="1"/>
+  <text x="260" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">五行生剋關係圖</text>
+  <text x="260" y="60" text-anchor="middle" fill="#887a6a" font-size="12">實線＝相生（順生循環）・虛線＝相剋（隔位制衡）</text>
+  <!-- Element nodes -->
+  <g filter="url(#softShadow)">
+    <circle cx="260" cy="105" r="42" fill="url(#woodG)" stroke="#6aba6a" stroke-width="2"/><text x="260" y="112" text-anchor="middle" fill="#d8ffd8" font-size="26" font-weight="bold">木</text>
+    <circle cx="420" cy="215" r="42" fill="url(#fireG)" stroke="#ff9a5a" stroke-width="2"/><text x="420" y="222" text-anchor="middle" fill="#ffe0c8" font-size="26" font-weight="bold">火</text>
+    <circle cx="350" cy="355" r="42" fill="url(#earthG)" stroke="#e0c060" stroke-width="2"/><text x="350" y="362" text-anchor="middle" fill="#3a2a00" font-size="26" font-weight="bold">土</text>
+    <circle cx="170" cy="355" r="42" fill="url(#metalG)" stroke="#c0c0d8" stroke-width="2"/><text x="170" y="362" text-anchor="middle" fill="#2a2a3a" font-size="26" font-weight="bold">金</text>
+    <circle cx="100" cy="215" r="42" fill="url(#waterG)" stroke="#70b8f0" stroke-width="2"/><text x="100" y="222" text-anchor="middle" fill="#d8f0ff" font-size="26" font-weight="bold">水</text>
+  </g>
+  <!-- 生 arrows (gold solid, animated) -->
+  <path d="M288,130 Q355,138 392,180" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="352" y="142" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M428,257 Q418,295 390,322" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="428" y="290" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M318,375 Q260,405 205,375" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="260" y="410" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M145,322 Q120,290 108,255" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="98" y="295" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M132,190 Q160,145 230,115" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="150" y="140" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <!-- 剋 arrows (red dashed) -->
+  <line x1="265" y1="147" x2="335" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="390" y1="340" x2="135" y2="235" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="100" y1="255" x2="240" y2="110" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="275" y1="145" x2="185" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="125" y1="190" x2="375" y2="345" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
   <!-- Legend -->
-  <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
-  <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
+  <g>
+    <rect x="70" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="82" y1="437" x2="108" y2="437" stroke="#c8a050" stroke-width="2.5"/>
+    <text x="115" y="441" fill="#b8a88a" font-size="11">相生（順）</text>
+    <rect x="310" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="322" y1="437" x2="348" y2="437" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5"/>
+    <text x="355" y="441" fill="#b8a88a" font-size="11">相剋（隔）</text>
+  </g>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz6"></div></div>
@@ -366,41 +425,56 @@
 <div class="sub-section"><h3>3. 五個輔助原則</h3>
 <p>1. 透干原則：月令所藏天干透出天干者秉令。2. 得根原則：天干在地支重見謂之得根。3. 會局原則：地支會局成化，三支作同一神看。4. 貼身原則：貼住日元的坐支、時干、月干若是劫比印，其力直達日元。5. 夾剋原則：自黨遭鄰柱夾剋被剋死，身旺轉身弱。</p>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Noto Sans TC',sans-serif">
-  <rect width="600" height="450" rx="16" fill="#1a1520"/>
-  <text x="300" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">十神關係圖（以日主為中心）</text>
-  <!-- Central circle -->
-  <circle cx="300" cy="230" r="50" fill="#3d2f50" stroke="#ffd700" stroke-width="3"/><text x="300" y="225" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">日主</text><text x="300" y="245" text-anchor="middle" fill="#d8a0f0" font-size="12">（我）</text>
-  <!-- 5 relationships, positioned around -->
-  <!-- 生我 (印) - top -->
-  <rect x="245" y="50" width="110" height="55" rx="10" fill="#2d3a2d" stroke="#4a9a4a" stroke-width="1.5"/>
-  <text x="300" y="72" text-anchor="middle" fill="#7cba5a" font-size="14" font-weight="bold">生我 → 印星</text>
-  <text x="300" y="92" text-anchor="middle" fill="#a0c080" font-size="11">正印・偏印</text>
-  <line x1="300" y1="105" x2="300" y2="180" stroke="#4a9a4a" stroke-width="2" marker-end="url(#arr-g)"/>
-  <defs><marker id="arr-g" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#4a9a4a"/></marker></defs>
-  <!-- 我生 (食傷) - bottom -->
-  <rect x="230" y="370" width="140" height="55" rx="10" fill="#2a2438" stroke="#8a6ad0" stroke-width="1.5"/>
-  <text x="300" y="392" text-anchor="middle" fill="#b89ae0" font-size="14" font-weight="bold">我生 → 食傷</text>
-  <text x="300" y="412" text-anchor="middle" fill="#a090c0" font-size="11">食神・傷官</text>
-  <defs><marker id="arr-p" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#8a6ad0"/></marker></defs>
-  <line x1="300" y1="280" x2="300" y2="368" stroke="#8a6ad0" stroke-width="2" marker-end="url(#arr-p)"/>
-  <!-- 剋我 (官殺) - left -->
-  <rect x="30" y="200" width="110" height="55" rx="10" fill="#3a2020" stroke="#d86060" stroke-width="1.5"/>
-  <text x="85" y="222" text-anchor="middle" fill="#d88080" font-size="14" font-weight="bold">剋我 → 官殺</text>
-  <text x="85" y="242" text-anchor="middle" fill="#c09090" font-size="11">正官・七殺</text>
-  <defs><marker id="arr-r" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker></defs>
-  <line x1="140" y1="230" x2="248" y2="230" stroke="#d86060" stroke-width="2" marker-end="url(#arr-r)"/>
-  <!-- 我剋 (財才) - right -->
-  <rect x="460" y="200" width="110" height="55" rx="10" fill="#5a4a2a" stroke="#c89b3c" stroke-width="1.5"/>
-  <text x="515" y="222" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">我剋 → 財星</text>
-  <text x="515" y="242" text-anchor="middle" fill="#c8b88a" font-size="11">正財・偏財</text>
-  <line x1="352" y1="230" x2="458" y2="230" stroke="#c89b3c" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- 同我 (比劫) - top-right -->
-  <rect x="420" y="80" width="110" height="55" rx="10" fill="#2a2040" stroke="#9a80d0" stroke-width="1.5"/>
-  <text x="475" y="102" text-anchor="middle" fill="#b8a0e0" font-size="14" font-weight="bold">同我 → 比劫</text>
-  <text x="475" y="122" text-anchor="middle" fill="#a090c0" font-size="11">比肩・劫財</text>
-  <defs><marker id="arr-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#9a80d0"/></marker></defs>
-  <path d="M345,180 Q390,130 418,108" fill="none" stroke="#9a80d0" stroke-width="2" marker-end="url(#arr-b)"/>
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="'Noto Sans TC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/></linearGradient>
+    <radialGradient id="centerG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4a3a6a"/><stop offset="100%" stop-color="#2a1f3d"/></radialGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/></filter>
+  </defs>
+  <rect width="620" height="460" rx="18" fill="url(#bg)" stroke="#3a3040" stroke-width="1"/>
+  <text x="310" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">十神關係圖（以日主為中心）</text>
+  <!-- Center: 日主 -->
+  <circle cx="310" cy="235" r="48" fill="url(#centerG)" stroke="#ffd700" stroke-width="3" filter="url(#ds)"/>
+  <text x="310" y="228" text-anchor="middle" fill="#ffd700" font-size="17" font-weight="bold">日主</text>
+  <text x="310" y="248" text-anchor="middle" fill="#b89ae0" font-size="11">（我）</text>
+  <!-- 生我 → 印星 (top) -->
+  <g filter="url(#ds)">
+    <rect x="240" y="52" width="140" height="52" rx="12" fill="#1e3a1e" stroke="#4a8a3a" stroke-width="1.5"/>
+    <text x="310" y="74" text-anchor="middle" fill="#7cba5a" font-size="15" font-weight="bold">生我 → 印星</text>
+    <text x="310" y="92" text-anchor="middle" fill="#a0c080" font-size="10">正印・偏印</text>
+  </g>
+  <line x1="310" y1="104" x2="310" y2="187" stroke="#4a8a3a" stroke-width="2" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <!-- 我生 → 食傷 (bottom) -->
+  <g filter="url(#ds)">
+    <rect x="230" y="392" width="160" height="52" rx="12" fill="#2a1a3a" stroke="#7a5ac0" stroke-width="1.5"/>
+    <text x="310" y="414" text-anchor="middle" fill="#a080e0" font-size="15" font-weight="bold">我生 → 食傷</text>
+    <text x="310" y="432" text-anchor="middle" fill="#8870b0" font-size="10">食神・傷官</text>
+  </g>
+  <line x1="310" y1="283" x2="310" y2="390" stroke="#7a5ac0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 剋我 → 官殺 (left) -->
+  <g filter="url(#ds)">
+    <rect x="20" y="208" width="130" height="52" rx="12" fill="#3a1a1a" stroke="#c05050" stroke-width="1.5"/>
+    <text x="85" y="230" text-anchor="middle" fill="#e07070" font-size="15" font-weight="bold">剋我 → 官殺</text>
+    <text x="85" y="248" text-anchor="middle" fill="#c08080" font-size="10">正官・七殺</text>
+  </g>
+  <line x1="150" y1="235" x2="260" y2="235" stroke="#c05050" stroke-width="2" marker-end="url(#arrowR)"/>
+  <!-- 我剋 → 財星 (right) -->
+  <g filter="url(#ds)">
+    <rect x="470" y="208" width="130" height="52" rx="12" fill="#3a3018" stroke="#c8a040" stroke-width="1.5"/>
+    <text x="535" y="230" text-anchor="middle" fill="#ffd700" font-size="15" font-weight="bold">我剋 → 財星</text>
+    <text x="535" y="248" text-anchor="middle" fill="#c8b888" font-size="10">正財・偏財</text>
+  </g>
+  <line x1="358" y1="235" x2="468" y2="235" stroke="#c8a040" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 同我 → 比劫 (top-right) -->
+  <g filter="url(#ds)">
+    <rect x="450" y="72" width="130" height="52" rx="12" fill="#1e1838" stroke="#8070b0" stroke-width="1.5"/>
+    <text x="515" y="94" text-anchor="middle" fill="#a090d0" font-size="15" font-weight="bold">同我 → 比劫</text>
+    <text x="515" y="112" text-anchor="middle" fill="#9080b0" font-size="10">比肩・劫財</text>
+  </g>
+  <path d="M340,192 Q400,135 448,98" fill="none" stroke="#8070b0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- Relationship cycle labels -->
+  <text x="195" y="170" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(-50,195,170)">相生循環</text>
+  <text x="420" y="320" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(50,420,320)">相剋循環</text>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
@@ -424,35 +498,57 @@
 <p>八字命局以中和為貴。古書云：「有病方為貴。」所謂病，是指八字格局有「病」，缺五行是其中一種病。當歲運遇到「藥」的時候，病便會痊癒了。例如八字五行欠木，就是病，那麼木也就是藥了。當歲運見木（甲乙寅卯），那就是藥到病除的時候了。</p>
 <div class="tip"><strong>📌 概念舉例</strong><p>【應用】改名也可以用病藥原理。五行欠水，改個三點水的名字；五行欠金，改個金字旁的名字。另一種病是正格的身旺病或身弱病——身旺宜剋泄，異黨是藥；身弱宜幫扶，自黨是藥。</p></div>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" font-family="'Noto Sans TC',sans-serif">
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" font-family="'Noto Sans TC',sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c89b3c"/></marker>
-    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker>
-    <filter id="glow"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/>
+    </linearGradient>
+    <radialGradient id="woodG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#3a8a3a"/><stop offset="100%" stop-color="#1e4a1e"/></radialGradient>
+    <radialGradient id="fireG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ff8a4a"/><stop offset="100%" stop-color="#8a3010"/></radialGradient>
+    <radialGradient id="earthG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e0b050"/><stop offset="100%" stop-color="#7a5a10"/></radialGradient>
+    <radialGradient id="metalG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#d0d0e8"/><stop offset="100%" stop-color="#5a5a7a"/></radialGradient>
+    <radialGradient id="waterG" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#50a0e0"/><stop offset="100%" stop-color="#103060"/></radialGradient>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#c8a050"/></marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#e06050"/></marker>
+    <filter id="softShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/></filter>
   </defs>
-  <rect width="500" height="420" rx="16" fill="#1a1520"/>
-  <text x="250" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">五行生剋圖</text>
-  <!-- Nodes -->
-  <circle cx="250" cy="90" r="38" fill="#2a5a2a" stroke="#4a9a4a" stroke-width="2"/><text x="250" y="96" text-anchor="middle" fill="#7cda7c" font-size="22" font-weight="bold">木</text>
-  <circle cx="400" cy="200" r="38" fill="#5a2a1a" stroke="#da6a3a" stroke-width="2"/><text x="400" y="206" text-anchor="middle" fill="#ff9a6a" font-size="22" font-weight="bold">火</text>
-  <circle cx="350" cy="340" r="38" fill="#5a4a2a" stroke="#c89b3c" stroke-width="2"/><text x="350" y="346" text-anchor="middle" fill="#ffd700" font-size="22" font-weight="bold">土</text>
-  <circle cx="150" cy="340" r="38" fill="#4a4a5a" stroke="#aaaacc" stroke-width="2"/><text x="150" y="346" text-anchor="middle" fill="#ccccff" font-size="22" font-weight="bold">金</text>
-  <circle cx="100" cy="200" r="38" fill="#1a2a4a" stroke="#4a7acc" stroke-width="2"/><text x="100" y="206" text-anchor="middle" fill="#7abaff" font-size="22" font-weight="bold">水</text>
-  <!-- 生 arrows (gold, curved) -->
-  <path d="M275,125 Q340,130 378,172" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="340" y="138" fill="#c89b3c" font-size="12">生</text>
-  <path d="M410,238 Q400,280 372,315" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="408" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M315,348 Q260,380 185,348" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="250" y="382" fill="#c89b3c" font-size="12">生</text>
-  <path d="M130,310 Q105,270 105,240" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="82" y="278" fill="#c89b3c" font-size="12">生</text>
-  <path d="M120,168 Q150,130 220,100" fill="none" stroke="#c89b3c" stroke-width="2.5" marker-end="url(#arrow)" class="flow-arrow"/><text x="140" y="128" fill="#c89b3c" font-size="12">生</text>
-  <!-- 剋 arrows (red, star pattern) -->
-  <line x1="250" y1="128" x2="335" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="375" y1="325" x2="120" y2="215" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="100" y1="238" x2="235" y2="90" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="265" y1="128" x2="165" y2="315" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
-  <line x1="120" y1="175" x2="365" y2="330" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow2)" class="flow-arrow2"/>
+  <rect width="520" height="460" rx="18" fill="url(#bgGrad)" stroke="#3a3040" stroke-width="1"/>
+  <text x="260" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">五行生剋關係圖</text>
+  <text x="260" y="60" text-anchor="middle" fill="#887a6a" font-size="12">實線＝相生（順生循環）・虛線＝相剋（隔位制衡）</text>
+  <!-- Element nodes -->
+  <g filter="url(#softShadow)">
+    <circle cx="260" cy="105" r="42" fill="url(#woodG)" stroke="#6aba6a" stroke-width="2"/><text x="260" y="112" text-anchor="middle" fill="#d8ffd8" font-size="26" font-weight="bold">木</text>
+    <circle cx="420" cy="215" r="42" fill="url(#fireG)" stroke="#ff9a5a" stroke-width="2"/><text x="420" y="222" text-anchor="middle" fill="#ffe0c8" font-size="26" font-weight="bold">火</text>
+    <circle cx="350" cy="355" r="42" fill="url(#earthG)" stroke="#e0c060" stroke-width="2"/><text x="350" y="362" text-anchor="middle" fill="#3a2a00" font-size="26" font-weight="bold">土</text>
+    <circle cx="170" cy="355" r="42" fill="url(#metalG)" stroke="#c0c0d8" stroke-width="2"/><text x="170" y="362" text-anchor="middle" fill="#2a2a3a" font-size="26" font-weight="bold">金</text>
+    <circle cx="100" cy="215" r="42" fill="url(#waterG)" stroke="#70b8f0" stroke-width="2"/><text x="100" y="222" text-anchor="middle" fill="#d8f0ff" font-size="26" font-weight="bold">水</text>
+  </g>
+  <!-- 生 arrows (gold solid, animated) -->
+  <path d="M288,130 Q355,138 392,180" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="352" y="142" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M428,257 Q418,295 390,322" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="428" y="290" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M318,375 Q260,405 205,375" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="260" y="410" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M145,322 Q120,290 108,255" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="98" y="295" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <path d="M132,190 Q160,145 230,115" fill="none" stroke="#c8a050" stroke-width="2.5" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <text x="150" y="140" text-anchor="middle" fill="#c8a050" font-size="11">生</text>
+  <!-- 剋 arrows (red dashed) -->
+  <line x1="265" y1="147" x2="335" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="390" y1="340" x2="135" y2="235" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="100" y1="255" x2="240" y2="110" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="275" y1="145" x2="185" y2="330" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
+  <line x1="125" y1="190" x2="375" y2="345" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#arrowR)" class="flow-arrow2"/>
   <!-- Legend -->
-  <line x1="180" y1="400" x2="210" y2="400" stroke="#c89b3c" stroke-width="2.5"/><text x="215" y="404" fill="#b8a88a" font-size="11">相生（順生）</text>
-  <line x1="300" y1="400" x2="330" y2="400" stroke="#d86060" stroke-width="1.8" stroke-dasharray="5,4"/><text x="335" y="404" fill="#b8a88a" font-size="11">相剋（隔一剋）</text>
+  <g>
+    <rect x="70" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="82" y1="437" x2="108" y2="437" stroke="#c8a050" stroke-width="2.5"/>
+    <text x="115" y="441" fill="#b8a88a" font-size="11">相生（順）</text>
+    <rect x="310" y="425" width="140" height="24" rx="12" fill="#1a1520" stroke="#3a3040"/>
+    <line x1="322" y1="437" x2="348" y2="437" stroke="#e06050" stroke-width="2" stroke-dasharray="6,5"/>
+    <text x="355" y="441" fill="#b8a88a" font-size="11">相剋（隔）</text>
+  </g>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz8"></div></div>
@@ -477,41 +573,56 @@
 <div class="sub-section"><h3>4. 斷事要訣</h3>
 <p>六親：印代表母，財代表妻/父，官殺代表子女（男命），傷食代表子女（女命）。財運：身旺歲運財透有根主財至；身弱歲運劫比透有根主財至。婚姻：女命見官殺歲運緣至；男命見財才歲運緣至。健康：身弱再遇傷食財才重泄主慢性病；財生官殺重剋日主是血光手術。</p>
 </div>
-<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="'Noto Sans TC',sans-serif">
-  <rect width="600" height="450" rx="16" fill="#1a1520"/>
-  <text x="300" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">十神關係圖（以日主為中心）</text>
-  <!-- Central circle -->
-  <circle cx="300" cy="230" r="50" fill="#3d2f50" stroke="#ffd700" stroke-width="3"/><text x="300" y="225" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">日主</text><text x="300" y="245" text-anchor="middle" fill="#d8a0f0" font-size="12">（我）</text>
-  <!-- 5 relationships, positioned around -->
-  <!-- 生我 (印) - top -->
-  <rect x="245" y="50" width="110" height="55" rx="10" fill="#2d3a2d" stroke="#4a9a4a" stroke-width="1.5"/>
-  <text x="300" y="72" text-anchor="middle" fill="#7cba5a" font-size="14" font-weight="bold">生我 → 印星</text>
-  <text x="300" y="92" text-anchor="middle" fill="#a0c080" font-size="11">正印・偏印</text>
-  <line x1="300" y1="105" x2="300" y2="180" stroke="#4a9a4a" stroke-width="2" marker-end="url(#arr-g)"/>
-  <defs><marker id="arr-g" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#4a9a4a"/></marker></defs>
-  <!-- 我生 (食傷) - bottom -->
-  <rect x="230" y="370" width="140" height="55" rx="10" fill="#2a2438" stroke="#8a6ad0" stroke-width="1.5"/>
-  <text x="300" y="392" text-anchor="middle" fill="#b89ae0" font-size="14" font-weight="bold">我生 → 食傷</text>
-  <text x="300" y="412" text-anchor="middle" fill="#a090c0" font-size="11">食神・傷官</text>
-  <defs><marker id="arr-p" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#8a6ad0"/></marker></defs>
-  <line x1="300" y1="280" x2="300" y2="368" stroke="#8a6ad0" stroke-width="2" marker-end="url(#arr-p)"/>
-  <!-- 剋我 (官殺) - left -->
-  <rect x="30" y="200" width="110" height="55" rx="10" fill="#3a2020" stroke="#d86060" stroke-width="1.5"/>
-  <text x="85" y="222" text-anchor="middle" fill="#d88080" font-size="14" font-weight="bold">剋我 → 官殺</text>
-  <text x="85" y="242" text-anchor="middle" fill="#c09090" font-size="11">正官・七殺</text>
-  <defs><marker id="arr-r" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#d86060"/></marker></defs>
-  <line x1="140" y1="230" x2="248" y2="230" stroke="#d86060" stroke-width="2" marker-end="url(#arr-r)"/>
-  <!-- 我剋 (財才) - right -->
-  <rect x="460" y="200" width="110" height="55" rx="10" fill="#5a4a2a" stroke="#c89b3c" stroke-width="1.5"/>
-  <text x="515" y="222" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">我剋 → 財星</text>
-  <text x="515" y="242" text-anchor="middle" fill="#c8b88a" font-size="11">正財・偏財</text>
-  <line x1="352" y1="230" x2="458" y2="230" stroke="#c89b3c" stroke-width="2" marker-end="url(#arrow)"/>
-  <!-- 同我 (比劫) - top-right -->
-  <rect x="420" y="80" width="110" height="55" rx="10" fill="#2a2040" stroke="#9a80d0" stroke-width="1.5"/>
-  <text x="475" y="102" text-anchor="middle" fill="#b8a0e0" font-size="14" font-weight="bold">同我 → 比劫</text>
-  <text x="475" y="122" text-anchor="middle" fill="#a090c0" font-size="11">比肩・劫財</text>
-  <defs><marker id="arr-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#9a80d0"/></marker></defs>
-  <path d="M345,180 Q390,130 418,108" fill="none" stroke="#9a80d0" stroke-width="2" marker-end="url(#arr-b)"/>
+<div class="diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" font-family="'Noto Sans TC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1830"/><stop offset="100%" stop-color="#14121c"/></linearGradient>
+    <radialGradient id="centerG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4a3a6a"/><stop offset="100%" stop-color="#2a1f3d"/></radialGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/></filter>
+  </defs>
+  <rect width="620" height="460" rx="18" fill="url(#bg)" stroke="#3a3040" stroke-width="1"/>
+  <text x="310" y="38" text-anchor="middle" fill="#ffd700" font-size="19" font-weight="bold">十神關係圖（以日主為中心）</text>
+  <!-- Center: 日主 -->
+  <circle cx="310" cy="235" r="48" fill="url(#centerG)" stroke="#ffd700" stroke-width="3" filter="url(#ds)"/>
+  <text x="310" y="228" text-anchor="middle" fill="#ffd700" font-size="17" font-weight="bold">日主</text>
+  <text x="310" y="248" text-anchor="middle" fill="#b89ae0" font-size="11">（我）</text>
+  <!-- 生我 → 印星 (top) -->
+  <g filter="url(#ds)">
+    <rect x="240" y="52" width="140" height="52" rx="12" fill="#1e3a1e" stroke="#4a8a3a" stroke-width="1.5"/>
+    <text x="310" y="74" text-anchor="middle" fill="#7cba5a" font-size="15" font-weight="bold">生我 → 印星</text>
+    <text x="310" y="92" text-anchor="middle" fill="#a0c080" font-size="10">正印・偏印</text>
+  </g>
+  <line x1="310" y1="104" x2="310" y2="187" stroke="#4a8a3a" stroke-width="2" marker-end="url(#arrowG)" class="flow-arrow"/>
+  <!-- 我生 → 食傷 (bottom) -->
+  <g filter="url(#ds)">
+    <rect x="230" y="392" width="160" height="52" rx="12" fill="#2a1a3a" stroke="#7a5ac0" stroke-width="1.5"/>
+    <text x="310" y="414" text-anchor="middle" fill="#a080e0" font-size="15" font-weight="bold">我生 → 食傷</text>
+    <text x="310" y="432" text-anchor="middle" fill="#8870b0" font-size="10">食神・傷官</text>
+  </g>
+  <line x1="310" y1="283" x2="310" y2="390" stroke="#7a5ac0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 剋我 → 官殺 (left) -->
+  <g filter="url(#ds)">
+    <rect x="20" y="208" width="130" height="52" rx="12" fill="#3a1a1a" stroke="#c05050" stroke-width="1.5"/>
+    <text x="85" y="230" text-anchor="middle" fill="#e07070" font-size="15" font-weight="bold">剋我 → 官殺</text>
+    <text x="85" y="248" text-anchor="middle" fill="#c08080" font-size="10">正官・七殺</text>
+  </g>
+  <line x1="150" y1="235" x2="260" y2="235" stroke="#c05050" stroke-width="2" marker-end="url(#arrowR)"/>
+  <!-- 我剋 → 財星 (right) -->
+  <g filter="url(#ds)">
+    <rect x="470" y="208" width="130" height="52" rx="12" fill="#3a3018" stroke="#c8a040" stroke-width="1.5"/>
+    <text x="535" y="230" text-anchor="middle" fill="#ffd700" font-size="15" font-weight="bold">我剋 → 財星</text>
+    <text x="535" y="248" text-anchor="middle" fill="#c8b888" font-size="10">正財・偏財</text>
+  </g>
+  <line x1="358" y1="235" x2="468" y2="235" stroke="#c8a040" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- 同我 → 比劫 (top-right) -->
+  <g filter="url(#ds)">
+    <rect x="450" y="72" width="130" height="52" rx="12" fill="#1e1838" stroke="#8070b0" stroke-width="1.5"/>
+    <text x="515" y="94" text-anchor="middle" fill="#a090d0" font-size="15" font-weight="bold">同我 → 比劫</text>
+    <text x="515" y="112" text-anchor="middle" fill="#9080b0" font-size="10">比肩・劫財</text>
+  </g>
+  <path d="M340,192 Q400,135 448,98" fill="none" stroke="#8070b0" stroke-width="2" marker-end="url(#arrowG)"/>
+  <!-- Relationship cycle labels -->
+  <text x="195" y="170" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(-50,195,170)">相生循環</text>
+  <text x="420" y="320" text-anchor="middle" fill="#5a5070" font-size="10" transform="rotate(50,420,320)">相剋循環</text>
 </svg>
 <div class="caption">↑ 本課核心概念圖示</div></div>
 <div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz9"></div></div>
