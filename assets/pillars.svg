@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" font-family="'Noto Sans TC',sans-serif">
+  <rect width="520" height="300" rx="16" fill="#1a1520"/>
+  <text x="260" y="35" text-anchor="middle" fill="#ffd700" font-size="18" font-weight="bold">八字命盤結構（四柱八個字）</text>
+  <!-- Columns -->
+  <g>
+    <rect x="40" y="70" width="100" height="180" rx="10" fill="#2a1f3d" stroke="#c89b3c" stroke-width="2"/>
+    <text x="90" y="95" text-anchor="middle" fill="#8a7aaa" font-size="13">年柱</text>
+    <text x="90" y="145" text-anchor="middle" fill="#ffd700" font-size="30" font-weight="bold">丙</text>
+    <text x="90" y="205" text-anchor="middle" fill="#7abaff" font-size="30" font-weight="bold">申</text>
+    <text x="90" y="235" text-anchor="middle" fill="#8a7aaa" font-size="12">天干 ／ 地支</text>
+  </g>
+  <g>
+    <rect x="160" y="70" width="100" height="180" rx="10" fill="#2a1f3d" stroke="#c89b3c" stroke-width="2"/>
+    <text x="210" y="95" text-anchor="middle" fill="#8a7aaa" font-size="13">月柱</text>
+    <text x="210" y="145" text-anchor="middle" fill="#ffd700" font-size="30" font-weight="bold">甲</text>
+    <text x="210" y="205" text-anchor="middle" fill="#7abaff" font-size="30" font-weight="bold">午</text>
+  </g>
+  <g>
+    <rect x="280" y="70" width="100" height="180" rx="10" fill="#3d2f50" stroke="#ffd700" stroke-width="2.5"/>
+    <text x="330" y="95" text-anchor="middle" fill="#8a7aaa" font-size="13">日柱（代表自己）</text>
+    <text x="330" y="145" text-anchor="middle" fill="#ffd700" font-size="30" font-weight="bold">己</text>
+    <text x="330" y="205" text-anchor="middle" fill="#7abaff" font-size="30" font-weight="bold">巳</text>
+  </g>
+  <g>
+    <rect x="400" y="70" width="100" height="180" rx="10" fill="#2a1f3d" stroke="#c89b3c" stroke-width="2"/>
+    <text x="450" y="95" text-anchor="middle" fill="#8a7aaa" font-size="13">時柱</text>
+    <text x="450" y="145" text-anchor="middle" fill="#ffd700" font-size="30" font-weight="bold">庚</text>
+    <text x="450" y="205" text-anchor="middle" fill="#7abaff" font-size="30" font-weight="bold">午</text>
+  </g>
+  <!-- Labels -->
+  <text x="330" y="275" text-anchor="middle" fill="#b8a88a" font-size="12">上方為天干（外在現象）・下方為地支（內在潛能）</text>
+</svg>

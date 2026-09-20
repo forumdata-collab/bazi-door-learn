@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" font-family="'Noto Sans TC',sans-serif">
+  <rect width="440" height="440" rx="16" fill="#1a1520"/>
+  <text x="220" y="35" text-anchor="middle" fill="#ffd700" font-size="17" font-weight="bold">十二地支・生肖・五行方位</text>
+  <circle cx="220" cy="230" r="150" fill="none" stroke="#3a3040" stroke-width="1.5"/>
+  <circle cx="220" cy="230" r="100" fill="none" stroke="#2a2430" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Earthly Branches around circle -->
+  <g>
+    <text x="220" y="82" text-anchor="middle" fill="#7abaff" font-size="16" font-weight="bold">子</text><text x="220" y="100" text-anchor="middle" fill="#888" font-size="10">鼠・水・北</text>
+    <text x="310" y="105" text-anchor="middle" fill="#c09090" font-size="16" font-weight="bold">丑</text><text x="310" y="123" text-anchor="middle" fill="#888" font-size="10">牛・土</text>
+    <text x="375" y="170" text-anchor="middle" fill="#7cda7c" font-size="16" font-weight="bold">寅</text><text x="375" y="188" text-anchor="middle" fill="#888" font-size="10">虎・木</text>
+    <text x="395" y="238" text-anchor="middle" fill="#7cda7c" font-size="16" font-weight="bold">卯</text><text x="395" y="256" text-anchor="middle" fill="#888" font-size="10">兔・木・東</text>
+    <text x="375" y="300" text-anchor="middle" fill="#c09090" font-size="16" font-weight="bold">辰</text><text x="375" y="318" text-anchor="middle" fill="#888" font-size="10">龍・土</text>
+    <text x="310" y="358" text-anchor="middle" fill="#ff9a6a" font-size="16" font-weight="bold">巳</text><text x="310" y="376" text-anchor="middle" fill="#888" font-size="10">蛇・火</text>
+    <text x="220" y="385" text-anchor="middle" fill="#ff9a6a" font-size="16" font-weight="bold">午</text><text x="220" y="403" text-anchor="middle" fill="#888" font-size="10">馬・火・南</text>
+    <text x="130" y="358" text-anchor="middle" fill="#c09090" font-size="16" font-weight="bold">未</text><text x="130" y="376" text-anchor="middle" fill="#888" font-size="10">羊・土</text>
+    <text x="65" y="300" text-anchor="middle" fill="#ccccff" font-size="16" font-weight="bold">申</text><text x="65" y="318" text-anchor="middle" fill="#888" font-size="10">猴・金</text>
+    <text x="45" y="238" text-anchor="middle" fill="#ccccff" font-size="16" font-weight="bold">酉</text><text x="45" y="256" text-anchor="middle" fill="#888" font-size="10">雞・金・西</text>
+    <text x="65" y="170" text-anchor="middle" fill="#c09090" font-size="16" font-weight="bold">戌</text><text x="65" y="188" text-anchor="middle" fill="#888" font-size="10">狗・土</text>
+    <text x="130" y="105" text-anchor="middle" fill="#7abaff" font-size="16" font-weight="bold">亥</text><text x="130" y="123" text-anchor="middle" fill="#888" font-size="10">豬・水</text>
+  </g>
+  <!-- Center label -->
+  <text x="220" y="225" text-anchor="middle" fill="#6a5a4a" font-size="11">北（子）</text>
+  <text x="220" y="240" text-anchor="middle" fill="#5a4a3a" font-size="9">→ 六合・六沖・三合</text>
+</svg>
