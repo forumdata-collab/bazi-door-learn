@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>點入八字門 — 教學站</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Serif TC','Noto Sans TC',serif;background:#14121c;color:#e8e0d0;line-height:1.8;min-height:100vh}
+.hero{background:linear-gradient(135deg,#2a1f3d 0%,#14121c 50%,#2d1f2f 100%);text-align:center;padding:70px 20px 50px;border-bottom:2px solid #c89b3c;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at 30% 20%,rgba(200,155,60,0.08),transparent 60%);pointer-events:none}
+.hero h1{font-size:3rem;color:#ffd700;text-shadow:0 2px 12px rgba(255,215,0,0.35);margin-bottom:10px;letter-spacing:4px}
+.hero .subtitle{font-size:1.15rem;color:#b8a88a;margin-bottom:8px}
+.hero .author{font-size:0.9rem;color:#887a6a}
+.hero .tag{display:inline-block;margin-top:14px;padding:6px 18px;border:1px solid #c89b3c;border-radius:20px;color:#c89b3c;font-size:0.85rem;letter-spacing:2px}
+nav.sticky{position:sticky;top:0;z-index:100;background:rgba(20,18,28,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #3a3040;padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+nav.sticky a{color:#b8a88a;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:0.9rem;transition:all .2s}
+nav.sticky a:hover{background:#3d2f50;color:#ffd700}
+.container{max-width:960px;margin:0 auto;padding:20px 16px}
+.toc{background:#1e1a28;border:1px solid #3a3040;border-radius:12px;padding:24px;margin:24px 0}
+.toc h2{color:#c89b3c;font-size:1.3rem;margin-bottom:14px;text-align:center}
+.toc table{width:100%;border-collapse:collapse}
+.toc td{padding:8px;border-bottom:1px solid #2a2430;color:#d0c8b8}
+.toc td a{color:#e8c868;text-decoration:none}
+.toc td a:hover{text-decoration:underline}
+.toc .lv{font-weight:700;color:#ffd700;width:70px}
+.level-tabs{display:flex;gap:8px;margin:28px 0 20px;flex-wrap:wrap;justify-content:center}
+.level-tab{padding:12px 24px;border-radius:25px;cursor:pointer;font-weight:700;font-size:1rem;border:2px solid #444;background:#2a2030;color:#b8a88a;transition:all .3s}
+.level-tab.active{background:#3d2f50;border-color:#c89b3c;color:#ffd700;box-shadow:0 0 15px rgba(200,155,60,0.2)}
+.level-tab:hover{border-color:#c89b3c}
+.level-content{display:none}
+.level-content.active{display:block}
+.lesson-card{background:#1e1a28;border:1px solid #3a3040;border-radius:14px;padding:26px;margin-bottom:26px}
+.lesson-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.lesson-header h2{color:#c89b3c;font-size:1.5rem;flex:1}
+.lesson-badge{background:#c89b3c;color:#14121c;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:700}
+.objectives{background:linear-gradient(135deg,#2d3a2d,#1a2a1a);border:1px solid #4a6a3a;border-radius:10px;padding:18px;margin-bottom:18px}
+.objectives h3{color:#7cba5a;margin-bottom:10px;font-size:1.05rem}
+.objectives li{margin:4px 0 4px 18px;color:#d0c8b8}
+.sub-section{margin-bottom:14px}
+.sub-section h3{color:#e8c868;font-size:1.1rem;margin-bottom:6px}
+.sub-section p{color:#d0c8b8;margin-bottom:8px}
+.example-box{background:#2a2438;border-left:4px solid #8a6ad0;border-radius:8px;padding:14px 16px;margin-top:4px}
+.example-box strong{color:#b89ae0}
+.diagram{background:#1a1625;border:1px solid #3a3040;border-radius:10px;padding:16px;margin:12px 0;text-align:center;overflow-x:auto}
+.diagram img{max-width:100%;max-height:280px;border-radius:8px}
+.diagram .caption{font-size:0.85rem;color:#887a6a;margin-top:8px}
+.quiz-box{background:#201828;border:1px solid #5a3a6a;border-radius:14px;padding:24px;margin-top:20px}
+.quiz-box h3{color:#d8a0f0;margin-bottom:16px;font-size:1.2rem}
+.quiz-q{margin-bottom:20px}
+.quiz-q label{font-weight:600;color:#c8b8a8;display:block;margin-bottom:8px;font-size:1.02rem}
+.quiz-opt{display:block;padding:9px 14px;margin:5px 0;border-radius:8px;cursor:pointer;background:#2a2030;border:1px solid #444;color:#b8a88a;transition:all .15s}
+.quiz-opt:hover{border-color:#c89b3c;background:#352a40}
+.quiz-opt.selected{border-color:#c89b3c;background:#3d2f50;color:#ffd700}
+.quiz-opt.correct{border-color:#4a6a3a;background:#2d3a2d;color:#7cba5a}
+.quiz-opt.wrong{border-color:#6a3a3a;background:#3a2020;color:#d86060}
+.check-btn{margin-top:14px;padding:12px 30px;border:none;border-radius:25px;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;font-weight:700;font-size:1.02rem;cursor:pointer;transition:all .2s}
+.check-btn:hover{background:linear-gradient(135deg,#d8ab4c,#b08838);transform:translateY(-1px)}
+.explain{margin-top:10px;padding:12px 14px;background:#1a1a2e;border-radius:8px;color:#b8a88a;font-size:0.95rem;display:none;border-left:3px solid #5a3a6a}
+.explain.show{display:block}
+.score-bar{margin-top:16px;padding:13px 16px;background:#252030;border-radius:10px;color:#c8b8a8;font-weight:600;display:none}
+.score-bar.show{display:block}
+.back-top{position:fixed;bottom:30px;right:30px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#c89b3c,#a07828);color:#14121c;border:none;font-size:1.5rem;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}
+.back-top.show{opacity:1;pointer-events:auto}
+.back-top:hover{transform:translateY(-3px)}
+footer{text-align:center;padding:36px 20px;color:#6a5a4a;font-size:0.88rem;border-top:1px solid #2a2430;margin-top:40px}
+.drawer{position:fixed;top:0;right:-320px;width:300px;height:100%;background:#1e1a28;z-index:300;transition:right .3s;padding:24px;overflow-y:auto;border-left:1px solid #c89b3c}
+.drawer.open{right:0}
+.drawer h3{color:#ffd700;margin-bottom:16px}
+.drawer a{display:block;color:#d0c8b8;text-decoration:none;padding:8px 0;border-bottom:1px solid #2a2430}
+.drawer a:hover{color:#e8c868}
+.menu-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;border-radius:50%;background:#3d2f50;color:#ffd700;border:1px solid #c89b3c;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.4)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:250;display:none}
+.overlay.show{display:block}
+@media(max-width:640px){.hero h1{font-size:2.1rem}.container{padding:14px 10px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hero">
+<h1>點入八字門</h1>
+<div class="subtitle">八字命理教學站 — 三級九課循序漸進</div>
+<span class="tag">📚 全書九課 · 180 題課後練習 · 深度 OCR 製作</span>
+<div class="author" style="margin-top:10px">原著：羅量 ／ 聚賢館文化有限公司</div>
+</div>
+
+<nav class="sticky">
+<a href="#index">📖 課程索引</a>
+<a href="#lv1">🌱 初級</a>
+<a href="#lv2">🔥 中級</a>
+<a href="#lv3">🧭 高級</a>
+<a href="#appendix">📄 附錄</a>
+</nav>
+
+<div class="container">
+
+<div class="toc" id="index">
+<h2>📖 課程索引</h2>
+<table><tr><td class="lv">🌱 初級</td><td><a href="#lesson1">1. 第一課：認識八字</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🌱 初級</td><td><a href="#lesson2">2. 第二課：天干地支</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🌱 初級</td><td><a href="#lesson3">3. 第三課：排四柱</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🔥 中級</td><td><a href="#lesson4">4. 第四課：五行生剋</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🔥 中級</td><td><a href="#lesson5">5. 第五課：十神體系</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🔥 中級</td><td><a href="#lesson6">6. 第六課：合化沖合</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🧭 高級</td><td><a href="#lesson7">7. 第七課：定格局</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🧭 高級</td><td><a href="#lesson8">8. 第八課：用神體系</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr>
+<tr><td class="lv">🧭 高級</td><td><a href="#lesson9">9. 第九課：實戰論命</a></td><td style="text-align:right;color:#887a6a">20 題</td></tr></table>
+</div>
+
+
+<div class="level-tabs" id="levels">
+<div class="level-tab active" onclick="showLevel('lv1',this)">🌱 初級（第1-3課）</div>
+<div class="level-tab" onclick="showLevel('lv2',this)">🔥 中級（第4-6課）</div>
+<div class="level-tab" onclick="showLevel('lv3',this)">🧭 高級（第7-9課）</div>
+</div>
+
+<div id="lv1" class="level-content"><div class="lesson-card" id="lesson1">
+<div class="lesson-header"><span class="lesson-badge">第1課</span><h2>第一課：認識八字</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>理解八字命理的歷史背景與基本原理</li>
+<li>掌握天干、地支及六十甲子的概念</li>
+<li>了解四柱八字的組成結構</li>
+</ul></div>
+<div class="sub-section"><h3>1. 八字的起源</h3><p>八字命理是中國古代算命術的一種，始於漢，成於唐宋，盛於明清，至今不衰。八字是人出生的「時辰」，所以又叫「生辰八字」。人的出生時辰，紀以年、月、日、時，用以表述年月日時的叫做曆法。</p>
+</div>
+<div class="sub-section"><h3>2. 甲曆與干支</h3><p>甲曆是甲子曆的簡稱，又稱干支曆。它由十個天干和十二個地支組成，一個天干輪配一個地支，天干在上，地支在下，一共配出六十個干支組合，用以紀年、紀月、紀日和紀時。生辰八字的年月日時以甲曆為紀，由六十組干支構成了年柱、月柱、日柱和時柱，所以八字算命又叫四柱算命。</p>
+</div>
+<div class="sub-section"><h3>3. 四柱結構</h3><p>八字命盤由年月日時四柱共八個字構成。例如：年柱→丙申、月柱→甲午、日柱→己巳、時柱→庚午。每一柱由一個天干和一個地支組成，四柱共八個字，故稱「八字」。天干好比一棵大樹的枝和葉，反映了命主的外在和吉凶現象；地支則好比大樹的根，體現了命主的生命力和潛能。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz1"></div></div>
+</div>
+<div class="lesson-card" id="lesson2">
+<div class="lesson-header"><span class="lesson-badge">第2課</span><h2>第二課：天干地支</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>熟記十天干及其五行屬性</li>
+<li>熟記十二地支及其五行屬性</li>
+<li>掌握六十甲子的組成規律</li>
+</ul></div>
+<div class="sub-section"><h3>1. 十天干</h3><p>甲、乙、丙、丁、戊、己、庚、辛、壬、癸。天干配五行：甲乙屬木，丙丁屬火，戊己屬土，庚辛屬金，壬癸屬水。天干配陰陽：甲、丙、戊、庚、壬屬陽，乙、丁、己、辛、癸屬陰。</p>
+</div>
+<div class="sub-section"><h3>2. 十二地支</h3><p>子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。地支配五行：亥子屬水，寅卯屬木，巳午屬火，申酉屬金，辰戌丑未屬土。地支配陰陽：子寅辰午申戌為陽，丑卯巳未酉亥為陰。</p>
+</div>
+<div class="sub-section"><h3>3. 六十甲子</h3><p>將一個天干和一個地支輪番配對，便可以配成六十甲子。先配第一輪：甲配子，乙配丑，丙配寅……癸配酉；再由甲配戌，乙配亥。六十甲子可分成五組：第一組由甲子開始，第二組由丙子開始，第三組由戊子開始，第四組由庚子開始，第五組由壬子開始。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz1"></div></div>
+</div>
+<div class="lesson-card" id="lesson3">
+<div class="lesson-header"><span class="lesson-badge">第3課</span><h2>第三課：排四柱</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>學會起年柱（以立春為界）</li>
+<li>學會起月柱（以節氣為界）</li>
+<li>學會起日柱（查萬年曆）</li>
+<li>學會起時柱（五鼠遁口訣）</li>
+</ul></div>
+<div class="sub-section"><h3>1. 起年柱</h3><p>年柱以立春（約國曆二月四日）為分界，非以農曆正月初一。例如，國曆二月三日出生，即使已過農曆新年，年柱仍屬上一年。一九四一年至一九七九年在香港出生的人，出生的月份又恰好是三月至十一月之內，他的出生時間大多數記以夏令時間，需注意撥慢一小時。</p>
+</div>
+<div class="sub-section"><h3>2. 起月柱</h3><p>月柱以節氣（節）為分界。一年十二個節氣，配十二地支。正月建寅，二月建卯，三月建辰……十二月建丑。月柱可用「五虎遁年起月」口訣推算：甲己之年丙作首，乙庚之歲戊為頭，丙辛歲首尋庚起，丁壬壬位順行流，戊癸何方發，甲寅之上好追求。</p>
+</div>
+<div class="sub-section"><h3>3. 起日柱</h3><p>日柱需查萬年曆。日的分界以子時（晚上十一時）為準。注意「夜子時」問題——晚上十一時至十二時出生者，日柱可能有爭議。一種意見認為子時為日之交，晚上十一時便進入第二日；另一種意見認為過了十二時零分才算交入第二日。</p>
+</div>
+<div class="sub-section"><h3>4. 起時柱</h3><p>時柱可用「五鼠遁日起時」口訣推算：甲己還加甲，乙庚丙子初，丙辛從戊起，丁壬庚子居，戊癸何方發，壬子是真途。一個時辰等於兩小時。子時——午夜十一時至一時，丑時——一時至三時，寅時——三時至五時，以此類推。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz1"></div></div>
+</div></div>
+<div id="lv2" class="level-content"><div class="lesson-card" id="lesson4">
+<div class="lesson-header"><span class="lesson-badge">第4課</span><h2>第四課：五行生剋</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>掌握五行（木火土金水）的基礎概念</li>
+<li>理解五行相生相剋的關係</li>
+<li>了解十二長生與五行旺衰</li>
+</ul></div>
+<div class="sub-section"><h3>1. 五行基礎</h3><p>五行：木、火、土、金、水。分陰陽兩類，配入十天干：甲—陽木（棟梁之材）、乙—陰木（生氣之木）、丙—陽火（太陽之氣）、丁—陰火（凡間之火）、戊—陽土（堤岸城牆）、己—陰土（田園之土）、庚—陽金（刀斧之金）、辛—陰金（珠玉之金）、壬—陽水（江河之水）、癸—陰水（雨露之水）。</p>
+</div>
+<div class="sub-section"><h3>2. 五行相生</h3><p>相生順序：木生火、火生土、土生金、金生水、水生木。以任何一行為「我」，生我者為母（印），我生者為子（食傷）。例如以木為我，水生木（水是母/印），木生火（火是子/食傷）。</p>
+</div>
+<div class="sub-section"><h3>3. 五行相剋</h3><p>相剋順序：木剋土、土剋水、水剋火、火剋金、金剋木。以任何一行為「我」，剋我者為官殺，我剋者為財才。例如以木為我，金剋木（金是官殺），木剋土（土是財才）。</p>
+</div>
+<div class="sub-section"><h3>4. 十二長生</h3><p>十二長生：長生、沐浴、冠帶、臨官、帝旺、衰、病、死、墓、絕、胎、養。描述五行在不同階段的旺衰狀態。如甲木長生在亥，沐浴在子，冠帶在丑，臨官在寅，帝旺在卯……</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
+</div>
+<div class="lesson-card" id="lesson5">
+<div class="lesson-header"><span class="lesson-badge">第5課</span><h2>第五課：十神體系</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>理解十神的定義與分類</li>
+<li>掌握比肩、劫財、食神、傷官等十神含義</li>
+<li>學會判斷自黨與異黨</li>
+</ul></div>
+<div class="sub-section"><h3>1. 十神定義</h3><p>十神是日元（日柱天干）與其他干支五行生剋關係的名稱：比肩、劫財（同我）、食神、傷官（我生）、正財、偏財（我剋）、正官、七殺（剋我）、正印、偏印（生我）。比肩與劫財的區別：比肩是同性相見（如甲見甲），劫財是異性相見（如甲見乙）。</p>
+</div>
+<div class="sub-section"><h3>2. 十神的意義</h3><p>比肩：代表兄弟、朋友、競爭。劫財：代表異性兄弟、競爭對手。食神：代表才華、口福、子女（女命）。傷官：代表智慧、名譽、反叛。正財：代表穩定收入、妻星（男命）。偏財：代表意外之財、父星。正官：代表職位、權力、夫星（女命）。七殺：代表壓力、挑戰、權威。正印：代表學問、母星、保護。偏印：代表偏門學問、繼母。</p>
+</div>
+<div class="sub-section"><h3>3. 自黨與異黨</h3><p>將十神分兩大派：自黨——同我（比肩、劫財）和生我（正印、偏印）；異黨——剋我（正官、七殺）、我剋（正財、偏財）、我生（食神、傷官）。身旺者以異黨為喜、自黨為忌；身弱者反之。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
+</div>
+<div class="lesson-card" id="lesson6">
+<div class="lesson-header"><span class="lesson-badge">第6課</span><h2>第六課：合化沖合</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>掌握天干五合的規則</li>
+<li>理解地支六合與六沖</li>
+<li>了解合化的條件與意義</li>
+</ul></div>
+<div class="sub-section"><h3>1. 天干五合</h3><p>甲己合化土、乙庚合化金、丙辛合化水、丁壬合化木、戊癸合化火。五合是陰陽之合，一個陰干配一個陽干，二者五行本來相剋，因陰陽相吸而由剋變合。合化條件：鄰干作合、月提引化、化神透干。</p>
+</div>
+<div class="sub-section"><h3>2. 地支六合</h3><p>子丑合化土、寅亥合化木、卯戌合化火、辰酉合金、巳申合化水、午未合火土。六合也是一陰支配一陽支，以方位對配而作合。合化條件：天干見化神透出方可成化。</p>
+</div>
+<div class="sub-section"><h3>3. 地支六沖</h3><p>子午沖、丑未沖、寅申沖、卯酉沖、辰戌沖、巳亥沖。相沖的地支方位相對、五行剋戰。六沖代表動盪、變化、分離。如年柱受沖影響祖輩，月柱受沖影響父母，日柱受沖影響配偶，時柱受沖影響子女。</p>
+</div>
+<div class="sub-section"><h3>4. 合化的意義</h3><p>合化後，原本的喜神可能變成忌神，原本的忌神也可能變成喜神。例如命局以金為喜，乙庚合化金，則乙木運可能由忌變喜。因此起盤算命之前，原局的干支合化一樣不能草率了事。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz4"></div></div>
+</div></div>
+<div id="lv3" class="level-content"><div class="lesson-card" id="lesson7">
+<div class="lesson-header"><span class="lesson-badge">第7課</span><h2>第七課：定格局</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>學會用三審法判斷身旺身弱</li>
+<li>理解正格與特格的區別</li>
+<li>掌握透干、得根、會局等判斷原則</li>
+</ul></div>
+<div class="sub-section"><h3>1. 格局分類</h3><p>八字格局只分兩大類：正格——局內有自黨又有異黨，日主不是身旺就是身弱；特格——局內全是自黨或全是異黨，日主極旺（專旺格）或極弱（從格）。</p>
+</div>
+<div class="sub-section"><h3>2. 三審法</h3><p>定正格衰旺的基本法則叫「三審」：審令（月令）——日元生於自黨月令叫得令，生於異黨月令叫失令；審地（地支）——其餘三個地支自黨多叫得地；審勢（天干）——其餘三個天干自黨多叫得勢。三失其二以上為身弱。</p>
+</div>
+<div class="sub-section"><h3>3. 五個輔助原則</h3><p>1. 透干原則：月令所藏天干透出天干者秉令。2. 得根原則：天干在地支重見謂之得根。3. 會局原則：地支會局成化，三支作同一神看。4. 貼身原則：貼住日元的坐支、時干、月干若是劫比印，其力直達日元。5. 夾剋原則：自黨遭鄰柱夾剋被剋死，身旺轉身弱。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
+</div>
+<div class="lesson-card" id="lesson8">
+<div class="lesson-header"><span class="lesson-badge">第8課</span><h2>第八課：用神體系</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>理解通關用神的概念與應用</li>
+<li>掌握調候用神的原理</li>
+<li>了解病藥用神的實戰意義</li>
+</ul></div>
+<div class="sub-section"><h3>1. 通關用神</h3><p>當命局兩行對峙、氣勢不通時，取通關之神使氣流通。例如：財才剋印，官殺是通關用神——因為財才生官殺，官殺生印，財才不剋印。又如：官殺剋劫比，印是通關用神——因為官殺生印，印生劫比，官殺不剋劫比。通關用神在歲運出現時，通常伴隨轉危為安、化險為夷的事情。</p>
+<div class="example-box"><strong>📌 概念舉例：</strong>【實例】某造身弱有印，原局天干財星剋印，印星孤露無助。當大運見官殺（如壬戌運），財生官殺，官殺生印，化解了財剋印的危機。此造交入官殺運後，自立門戶開設會計師事務所，正是「殺印相生」之應。</div>
+</div>
+<div class="sub-section"><h3>2. 調候用神</h3><p>將十日主分做陰陽五行，以木火土金水五種物性，相對於它所生的月令氣候，作為喜用的依據。例如甲木生於冬令（亥月、子月），木寒要用火暖，丙就是調候用神。又如金生於夏令（巳月、午月），烈火熔金，就要用水調候，壬就是調候之神。</p>
+<div class="example-box"><strong>📌 概念舉例：</strong>【注意】調候用神深入民心，但卻容易捉錯用神。例如丁火弱命生於午火月，不單不忌火，凡見丙丁巳午火都會發大財。因為身弱得令，調候用神反而會誤判喜忌。</div>
+</div>
+<div class="sub-section"><h3>3. 病藥用神</h3><p>八字命局以中和為貴。古書云：「有病方為貴。」所謂病，是指八字格局有「病」，缺五行是其中一種病。當歲運遇到「藥」的時候，病便會痊癒了。例如八字五行欠木，就是病，那麼木也就是藥了。當歲運見木（甲乙寅卯），那就是藥到病除的時候了。</p>
+<div class="example-box"><strong>📌 概念舉例：</strong>【應用】改名也可以用病藥原理。五行欠水，改個三點水的名字；五行欠金，改個金字旁的名字。另一種病是正格的身旺病或身弱病——身旺宜剋泄，異黨是藥；身弱宜幫扶，自黨是藥。</div>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
+</div>
+<div class="lesson-card" id="lesson9">
+<div class="lesson-header"><span class="lesson-badge">第9課</span><h2>第九課：實戰論命</h2></div>
+<div class="objectives"><h3>🎯 學習目標</h3><ul>
+<li>學會判斷好命與劣命的條件</li>
+<li>掌握富命與貧命的判斷方法</li>
+<li>理解吉凶斷法的基本原則</li>
+</ul></div>
+<div class="sub-section"><h3>1. 好命條件</h3><p>好命四條件：1. 五行中和——十神印劫傷財官樣樣都有；2. 秀氣流行——天干地支八字沿一個方向順或逆生下去；3. 用神有力——用神在天干透出且地支有根；4. 少剋沖刑伏合——四柱之間沒有太多衝突。</p>
+</div>
+<div class="sub-section"><h3>2. 富命與貧命</h3><p>判斷原則：正格身旺以正財偏財代表財富；正格身弱以劫財比肩代表財富。專旺格以劫比代表財富；從格以財才代表財富。原局財星透干根強，歲運又見財星干支同氣，便是富命。原局不見財星，歲運又無財星運，便是貧命。</p>
+</div>
+<div class="sub-section"><h3>3. 吉凶斷法</h3><p>《滴天髓》云：「何知其人吉，喜神為輔弼；何知其人凶，忌神輾轉攻。」喜神為輔弼——命局中要有喜神，而且要一輔一弼（兩個相鄰的喜神），才能發揮「制忌生喜」的作用。忌神輾轉攻——歲運忌神齊見，將喜神剋死時便凶。</p>
+</div>
+<div class="sub-section"><h3>4. 斷事要訣</h3><p>六親：印代表母，財代表妻/父，官殺代表子女（男命），傷食代表子女（女命）。財運：身旺歲運財透有根主財至；身弱歲運劫比透有根主財至。婚姻：女命見官殺歲運緣至；男命見財才歲運緣至。健康：身弱再遇傷食財才重泄主慢性病；財生官殺重剋日主是血光手術。</p>
+</div>
+<div class="quiz-box"><h3>📝 課後練習（20 題）</h3><div id="quiz7"></div></div>
+</div></div>
+
+<div id="appendix" class="lesson-card">
+<div class="lesson-header"><span class="lesson-badge">附錄</span><h2>📄 附錄：全書章節溫習</h2></div>
+<div class="sub-section">
+<h3>附錄一：重要口訣一覽</h3>
+<ul style="margin:8px 0 8px 20px;color:#d0c8b8">
+<li><strong>五虎遁年起月</strong>：甲己之年丙作首，乙庚之歲戊為頭，丙辛歲首尋庚起，丁壬壬位順行流，戊癸何方發，甲寅之上好追求。</li>
+<li><strong>五鼠遁日起時</strong>：甲己還加甲，乙庚丙子初，丙辛從戊起，丁壬庚子居，戊癸何方發，壬子是真途。</li>
+<li><strong>天干五合</strong>：甲己合化土，乙庚合化金，丙辛合化水，丁壬合化木，戊癸合化火。</li>
+<li><strong>地支六合</strong>：子丑合土，寅亥合木，卯戌合火，辰酉合金，巳申合水，午未合火土。</li>
+<li><strong>地支六沖</strong>：子午沖、丑未沖、寅申沖、卯酉沖、辰戌沖、巳亥沖。</li>
+<li><strong>五行相生</strong>：木生火、火生土、土生金、金生水、水生木。</li>
+<li><strong>五行相剋</strong>：金剋木、木剋土、土剋水、水剋火、火剋金。</li>
+<li><strong>斷事金句</strong>：現象從天干看，實力從地支尋；喜神為輔弼，忌神輾轉攻。</li>
+</ul>
+</div>
+<div class="sub-section">
+<h3>附錄二：十天干十二地支五行陰陽速查</h3>
+<p>天干：甲乙（木）、丙丁（火）、戊己（土）、庚辛（金）、壬癸（水）。<br>
+陽干：甲丙戊庚壬；陰干：乙丁己辛癸。<br>
+地支：亥子（水）、寅卯（木）、巳午（火）、申酉（金）、辰戌丑未（土）。<br>
+陽支：子寅辰午申戌；陰支：丑卯巳未酉亥。</p>
+</div>
+<div class="sub-section">
+<h3>附錄三：四柱排盤步驟</h3>
+<ol style="margin:8px 0 8px 20px;color:#d0c8b8">
+<li>查年柱：以立春為界，查萬年曆。</li>
+<li>查日柱：查萬年曆得日柱干支。</li>
+<li>起月柱：看出生日是否已過節，用五虎遁推天干。</li>
+<li>起時柱：將生時化為時辰，用五鼠遁推天干。</li>
+<li>排大運：陽男陰女順排，陰男陽女逆排。</li>
+<li>配十神：以日干對照各柱干支推十神。</li>
+<li>定旺弱：三審（令、地、勢）+ 五原則。</li>
+<li>分喜忌：定用神，觀合化，斷吉凶。</li>
+</ol>
+</div>
+<div class="sub-section">
+<h3>附錄四：OCR 原文備份</h3>
+<p>本站內容皆由全書 128 頁掃描件深度 OCR 提取製作。原文共提取約 51,000 字，點擊下方按鈕可瀏覽附錄頁。</p>
+</div>
+</div>
+</div>
+
+<button class="menu-btn" onclick="openMenu()">☰</button>
+<button class="back-top" id="toTop" onclick="toTop()">↑</button>
+<div class="overlay" id="ovl" onclick="closeMenu()"></div>
+<div class="drawer" id="drawer">
+<h3>📖 快速導航</h3>
+<a href="#index" onclick="closeMenu()">課程索引</a>
+<div style="color:#c89b3c;font-weight:700;margin-top:12px">🌱 初級級</div>
+<a href="#lesson1" onclick="closeMenu()">第一課：認識八字</a>
+<a href="#lesson2" onclick="closeMenu()">第二課：天干地支</a>
+<a href="#lesson3" onclick="closeMenu()">第三課：排四柱</a>
+<div style="color:#c89b3c;font-weight:700;margin-top:12px">🔥 中級級</div>
+<a href="#lesson4" onclick="closeMenu()">第四課：五行生剋</a>
+<a href="#lesson5" onclick="closeMenu()">第五課：十神體系</a>
+<a href="#lesson6" onclick="closeMenu()">第六課：合化沖合</a>
+<div style="color:#c89b3c;font-weight:700;margin-top:12px">🧭 高級級</div>
+<a href="#lesson7" onclick="closeMenu()">第七課：定格局</a>
+<a href="#lesson8" onclick="closeMenu()">第八課：用神體系</a>
+<a href="#lesson9" onclick="closeMenu()">第九課：實戰論命</a>
+<a href="#appendix" onclick="closeMenu()">📄 附錄</a>
+</div>
+
+<footer>
+<p>本站內容節選自 羅量《點入八字門》（聚賢館文化有限公司），僅作教育學習參考用途。</p>
+<p>深度 OCR 製作 · 教學站 v2 · 2026</p>
+</footer>
+
+<script>
+
+// Quiz data
+const quizzes = {
+  "quiz1": [{q:"八字又稱什麼？",opts:["四柱命理","紫微斗數","風水學","易經"],ans:0,explain:"八字由年月日時四柱組成，每柱一天干一地支，共八個字，故稱八字，又稱四柱算命。"},
+{q:"八字中的「四柱」是指？",opts:["春夏秋冬","東西南北","年月日時","金木水火"],ans:2,explain:"四柱即年柱、月柱、日柱、時柱，代表出生的年月日時。"},
+{q:"甲曆又稱什麼？",opts:["農曆","干支曆","新曆","羅馬曆"],ans:1,explain:"甲曆是甲子曆的簡稱，又稱干支曆，以天干地支紀年月日時。"},
+{q:"八字命理始於哪個朝代？",opts:["唐","宋","漢","明"],ans:2,explain:"八字命理始於漢，成於唐宋，盛於明清。"},
+{q:"生辰八字又被稱為？",opts:["四柱算命","五行算命","紫微斗數","風水命理"],ans:0,explain:"生辰八字以年月日時四柱推算，故又稱四柱算命。"},
+{q:"天干共有幾個？",opts:["8個","10個","12個","60個"],ans:1,explain:"十天干：甲乙丙丁戊己庚辛壬癸。"},
+{q:"地支共有幾個？",opts:["8個","10個","12個","60個"],ans:2,explain:"十二地支：子丑寅卯辰巳午未申酉戌亥。"},
+{q:"六十甲子是由什麼組成的？",opts:["天干+天干","地支+地支","天干+地支","五行+八卦"],ans:2,explain:"六十甲子由十天干配十二地支輪流組合而成。"},
+{q:"天干「甲」屬什麼五行？",opts:["火","土","木","金"],ans:2,explain:"甲乙屬木，丙丁屬火，戊己屬土，庚辛屬金，壬癸屬水。"},
+{q:"地支「子」屬什麼五行？",opts:["木","火","水","土"],ans:2,explain:"亥子屬水，寅卯屬木，巳午屬火，申酉屬金，辰戌丑未屬土。"},
+{q:"天干中屬陽的有哪些？",opts:["甲丙戊庚壬","乙丁己辛癸","甲乙丙丁戊","庚辛壬癸甲"],ans:0,explain:"甲、丙、戊、庚、壬屬陽干；乙、丁、己、辛、癸屬陰干。"},
+{q:"六十甲子循環一次是多少年？",opts:["12年","30年","60年","100年"],ans:2,explain:"六十甲子每六十年重複一次，故稱一甲子。"},
+{q:"八字命盤中，天干代表什麼？",opts:["內在潛能","外在現象","祖輩信息","子女運勢"],ans:1,explain:"天干好比大樹的枝葉，反映命主的外在和吉凶現象。"},
+{q:"八字命盤中，地支代表什麼？",opts:["外在現象","內在潛能","財運","官運"],ans:1,explain:"地支好比大樹的根，體現命主的生命力和潛能。"},
+{q:"哪個曆法以立春為年柱分界？",opts:["農曆","新曆","甲曆","公曆"],ans:2,explain:"甲曆（干支曆）以立春為年柱分界，非以農曆正月初一。"},
+{q:"「生辰八字」的「八字」是指？",opts:["八個五行","八個方位","八個干支字","八卦"],ans:2,explain:"四柱各一天干一地支，共八個字，故稱八字。"},
+{q:"古代將一日分為多少個時辰？",opts:["8個","10個","12個","24個"],ans:2,explain:"中國古代將一日分為十二時辰，每時辰等於兩小時。"},
+{q:"木星繞日公轉一周約等於多少地球年？",opts:["6年","12年","30年","60年"],ans:1,explain:"木星繞日公轉一周是地球年的十二倍，故古人以木星紀年。"},
+{q:"土星繞日公轉一周約等於多少地球年？",opts:["12年","24年","30年","60年"],ans:2,explain:"土星繞日公轉一周是地球年的三十倍。"},
+{q:"六十甲子中，「甲子」是第幾組的開頭？",opts:["第一組","第二組","第三組","第五組"],ans:0,explain:"六十甲子第一組由甲子開始，第二組由丙子開始。"}],
+  "quiz2": [{q:"十天干中，「甲」和「乙」分別屬於？",opts:["陽木、陰木","陽火、陰火","陽金、陰金","陽水、陰水"],ans:0,explain:"甲為陽木（棟梁之材），乙為陰木（生氣之木）。"},
+{q:"十二地支中，「子」和「午」分別屬於？",opts:["陽水、陽火","陰水、陰火","陽木、陰木","陽金、陰金"],ans:0,explain:"子屬陽水，午屬陽火。亥子屬水，巳午屬火。"},
+{q:"六十甲子的第一組由哪個干支開始？",opts:["甲子","甲戌","甲申","甲午"],ans:0,explain:"六十甲子第一組由甲子開始，依次為甲子、乙丑、丙寅……"},
+{q:"六十甲子可分成幾組？",opts:["3組","4組","5組","6組"],ans:2,explain:"六十甲子分成五組：甲子組、丙子組、戊子組、庚子組、壬子組。"},
+{q:"天干「庚」屬什麼五行？",opts:["木","火","土","金"],ans:3,explain:"庚辛屬金。庚為陽金（刀斧之金），辛為陰金（珠玉之金）。"},
+{q:"地支「寅」屬什麼五行？",opts:["水","木","火","土"],ans:1,explain:"寅卯屬木。寅為陽木，卯為陰木。"},
+{q:"天干「壬」和「癸」分別是？",opts:["陽水、陰水","陽火、陰火","陽木、陰木","陽金、陰金"],ans:0,explain:"壬為陽水（江河之水），癸為陰水（雨露之水）。"},
+{q:"六十甲子中，「甲子」到「癸亥」共多少組？",opts:["30組","48組","60組","120組"],ans:2,explain:"六十甲子共六十組，從甲子到癸亥。"},
+{q:"天干中，哪些屬於土？",opts:["甲乙","丙丁","戊己","庚辛"],ans:2,explain:"戊己屬土。戊為陽土（堤岸城牆），己為陰土（田園之土）。"},
+{q:"地支中，哪些屬於金？",opts:["寅卯","巳午","申酉","亥子"],ans:2,explain:"申酉屬金。申為陽金，酉為陰金。"},
+{q:"天干「丙」的五行象徵是？",opts:["棟梁之材","太陽之氣","刀斧之金","江河之水"],ans:1,explain:"丙為陽火，象徵太陽之正氣，能生萬物。"},
+{q:"天干「辛」的五行象徵是？",opts:["生氣之木","凡間之火","珠玉之金","雨露之水"],ans:2,explain:"辛為陰金，象徵珠玉之金。"},
+{q:"六十甲子的第二組由哪個干支開始？",opts:["甲子","甲戌","甲申","丙子"],ans:3,explain:"六十甲子第二組由丙子開始。"},
+{q:"地支「辰」和「戌」都屬於？",opts:["水","木","火","土"],ans:3,explain:"辰戌丑未四支都屬土。辰為陽土，戌為陽土。"},
+{q:"天干中，陰干有哪些？",opts:["甲丙戊庚壬","乙丁己辛癸","甲乙丙丁戊","庚辛壬癸子"],ans:1,explain:"乙、丁、己、辛、癸為陰干。"},
+{q:"六十甲子的第三組由哪個干支開始？",opts:["甲子","甲戌","甲申","甲午"],ans:2,explain:"六十甲子第三組由甲申開始。"},
+{q:"地支「亥」和「子」都屬於什麼五行？",opts:["木","火","水","金"],ans:2,explain:"亥子屬水。亥為陰水，子為陽水。"},
+{q:"天干「戊」的五行象徵是？",opts:["太陽之氣","堤岸城牆","珠玉之金","江河之水"],ans:1,explain:"戊為陽土，象徵堤岸城牆之土，只能抗水，不能種植。"},
+{q:"六十甲子的第四組由哪個干支開始？",opts:["甲子","甲戌","甲申","甲午"],ans:3,explain:"六十甲子第四組由甲午開始。"},
+{q:"地支「卯」屬於什麼五行？",opts:["水","木","火","金"],ans:1,explain:"寅卯屬木。卯為陰木。"}],
+  "quiz3": [{q:"年柱以什麼為分界？",opts:["農曆正月初一","國曆一月一日","立春日","冬至日"],ans:2,explain:"年柱以立春（約國曆二月四日）為分界，非以農曆正月初一。"},
+{q:"月柱以什麼為分界？",opts:["農曆初一","國曆每月一日","節氣（節）","中氣（氣）"],ans:2,explain:"月柱以節氣中的「節」為分界，如立春、驚蟄、清明等。"},
+{q:"正月在甲曆中建什麼？",opts:["子","丑","寅","卯"],ans:2,explain:"正月建寅，這是夏朝開國皇帝禹根據北斗斗柄所指方位制定的。"},
+{q:"「五虎遁年起月」口訣中，甲己之年的正月天干是？",opts:["甲","丙","戊","庚"],ans:1,explain:"甲己之年丙作首，即甲己年的正月天干由丙起。"},
+{q:"日柱的分界以什麼時辰為準？",opts:["午時（11-13時）","子時（23-1時）","卯時（5-7時）","酉時（17-19時）"],ans:1,explain:"日的分界以子時（晚上十一時）為準。"},
+{q:"「夜子時」是指哪個時間段？",opts:["晚上九時至十一時","晚上十一時至零時","零時至一時","一時至三時"],ans:1,explain:"夜子時是指晚上十一時至零時，仍算該日的日柱。"},
+{q:"「五鼠遁日起時」口訣中，甲己日的子時天干是？",opts:["甲","丙","戊","壬"],ans:0,explain:"甲己還加甲，即甲己日子時由甲干起。"},
+{q:"一個時辰等於多少小時？",opts:["1小時","1.5小時","2小時","3小時"],ans:2,explain:"一個時辰等於兩小時，如子時為午夜十一時至一時。"},
+{q:"1941至1979年香港出生的人需要注意什麼？",opts:["農曆閏月","夏令時間","日柱交接","月柱分界"],ans:1,explain:"這段期間香港實行夏令時間，出生時間需撥慢一小時。"},
+{q:"夏令時間比標準時間快多少？",opts:["半小時","一小時","一個半小時","兩小時"],ans:1,explain:"夏令時間比標準時間快一小時。"},
+{q:"起月柱的口訣「五虎遁」中，寅月又稱？",opts:["龍月","虎月","蛇月","馬月"],ans:1,explain:"寅月又稱虎月，因為寅對應生肖虎。"},
+{q:"日柱交接的爭議中，「早子時」是指？",opts:["晚上十一時至零時","零時至一時","一時至三時","晚上九時至十一時"],ans:1,explain:"早子時是指零時至一時，算翌日的日柱。"},
+{q:"如果一個人在夏令時間上午九時出生，轉換標準時間是？",opts:["上午七時","上午八時","上午九時","上午十時"],ans:1,explain:"夏令時間撥慢一小時，上午九時變為上午八時（辰時）。"},
+{q:"年柱分界日「立春」通常在國曆幾月幾日？",opts:["一月一日","二月四日前後","三月五日前後","四月五日前後"],ans:1,explain:"立春通常在國曆二月四日前後。"},
+{q:"月柱的「節」和「氣」有何不同？",opts:["節在月中，氣在月交","節在月交，氣在月中","兩者相同","節是農曆，氣是新曆"],ans:1,explain:"節在月交（如立春交入寅月），氣在月中（如雨水在寅月中）。"},
+{q:"查萬年曆主要用來起哪一柱？",opts:["年柱","月柱","日柱","時柱"],ans:2,explain:"日柱需查萬年曆，年月柱可由節氣推算，時柱由口訣推算。"},
+{q:"如果國曆二月三日出生，過了農曆新年但未過立春，年柱屬於？",opts:["當年","上一年","需要看具體時辰","看日柱"],ans:1,explain:"未過立春，年柱仍屬上一年。"},
+{q:"「五鼠遁」口訣中，丙辛日的子時天干是？",opts:["甲","丙","戊","壬"],ans:2,explain:"丙辛從戊起，即丙辛日子時由戊干起。"},
+{q:"如果一個人在夏令時間凌晨二時出生，轉換標準時間後是？",opts:["凌晨一時","凌晨二時","凌晨三時","凌晨零時"],ans:0,explain:"夏令時間撥慢一小時，凌晨二時變為凌晨一時（丑時）。"},
+{q:"古代曆法「夏曆」又稱什麼？",opts:["農曆","新曆","公曆","陽曆"],ans:0,explain:"夏曆始於四千年前夏朝，又稱農曆，是陰陽合曆。"}],
+  "quiz4": [{q:"五行包括哪些？",opts:["金木水火土","天地風雷水","日月星辰","乾坤震巽"],ans:0,explain:"五行：木、火、土、金、水，是中國古代哲學的基本元素。"},
+{q:"「木生火」屬於五行的什麼關係？",opts:["相剋","相生","比和","相沖"],ans:1,explain:"相生順序：木生火、火生土、土生金、金生水、水生木。"},
+{q:"「金剋木」屬於五行的什麼關係？",opts:["相剋","相生","比和","相合"],ans:0,explain:"相剋順序：金剋木、木剋土、土剋水、水剋火、火剋金。"},
+{q:"以木為「我」時，水代表什麼？",opts:["我生","剋我","生我","我剋"],ans:2,explain:"水生木，所以水是「生我」者，在十神中代表印星。"},
+{q:"以木為「我」時，火代表什麼？",opts:["生我","我生","剋我","我剋"],ans:1,explain:"木生火，所以火是「我生」者，在十神中代表食傷。"},
+{q:"以木為「我」時，金代表什麼？",opts:["生我","我生","剋我","我剋"],ans:2,explain:"金剋木，所以金是「剋我」者，在十神中代表官殺。"},
+{q:"以木為「我」時，土代表什麼？",opts:["生我","我生","剋我","我剋"],ans:3,explain:"木剋土，所以土是「我剋」者，在十神中代表財才。"},
+{q:"「十二長生」的第一個階段是？",opts:["沐浴","冠帶","長生","臨官"],ans:2,explain:"十二長生順序：長生、沐浴、冠帶、臨官、帝旺、衰、病、死、墓、絕、胎、養。"},
+{q:"甲木的「長生」在哪个地支？",opts:["子","丑","寅","亥"],ans:3,explain:"甲木長生在亥，沐浴在子，冠帶在丑，臨官在寅，帝旺在卯。"},
+{q:"「帝旺」在十二長生中代表什麼？",opts:["最弱","中等","最旺","開始生長"],ans:2,explain:"帝旺是十二長生中最旺的階段，代表事物發展到頂峰。"},
+{q:"天干中，甲乙屬什麼？",opts:["火","土","木","金"],ans:2,explain:"甲乙屬木。甲為陽木，乙為陰木。"},
+{q:"天干中，丙丁屬什麼？",opts:["木","火","土","水"],ans:1,explain:"丙丁屬火。丙為陽火，丁為陰火。"},
+{q:"地支中，寅卯屬什麼？",opts:["水","木","火","土"],ans:1,explain:"寅卯屬木。寅為陽木，卯為陰木。"},
+{q:"地支中，巳午屬什麼？",opts:["木","火","土","金"],ans:1,explain:"巳午屬火。巳為陽火，午為陰火。"},
+{q:"五行相生中，「土生什麼」？",opts:["木","火","金","水"],ans:2,explain:"土生金。相生順序：木生火、火生土、土生金、金生水、水生木。"},
+{q:"五行相剋中，「水剋什麼」？",opts:["木","火","土","金"],ans:1,explain:"水剋火。相剋順序：金剋木、木剋土、土剋水、水剋火、火剋金。"},
+{q:"以火為「我」時，木代表什麼？",opts:["生我","我生","剋我","我剋"],ans:0,explain:"木生火，所以木是「生我」者，代表印星。"},
+{q:"「冠帶」在十二長生中排第幾？",opts:["第二","第三","第四","第五"],ans:1,explain:"十二長生順序：長生(1)、沐浴(2)、冠帶(3)、臨官(4)、帝旺(5)…"},
+{q:"以水為「我」時，金代表什麼？",opts:["我生","剋我","生我","我剋"],ans:2,explain:"金生水，所以金是「生我」者，代表印星。"},
+{q:"五行中，「比和」是指什麼？",opts:["相生","相剋","同行相助","相沖"],ans:2,explain:"比和是指同一五行之間的關係，如木見木、火見火。"}],
+  "quiz5": [{q:"十神中的「比肩」代表什麼？",opts:["父母","兄弟、競爭","子女","配偶"],ans:1,explain:"比肩代表兄弟、朋友、競爭者，是同性相見的同我五行。"},
+{q:"十神中的「正財」代表什麼？",opts:["子女","父母","穩定收入、妻星","職位權力"],ans:2,explain:"正財代表穩定收入、工資，男命中也代表妻星。"},
+{q:"十神中的「正官」代表什麼？",opts:["才華","職位權力","父母","子女"],ans:1,explain:"正官代表職位、權力、名譽，女命中也代表夫星。"},
+{q:"十神中的「正印」代表什麼？",opts:["職位","學問、保護","財富","子女"],ans:1,explain:"正印代表學問、貴人、保護，母星。"},
+{q:"十神中的「傷官」代表什麼？",opts:["穩定收入","智慧、名譽","職位","父母"],ans:1,explain:"傷官代表智慧、才華、名譽，但也有反叛、不服管的特性。"},
+{q:"「我生」在十神中包括？",opts:["比肩、劫財","食神、傷官","正財、偏財","正官、七殺"],ans:1,explain:"我生者為食神和傷官，代表才華、表達、子女。"},
+{q:"「剋我」在十神中包括？",opts:["食神、傷官","正財、偏財","正官、七殺","正印、偏印"],ans:2,explain:"剋我者為正官和七殺，代表職位、權力、壓力。"},
+{q:"「生我」在十神中包括？",opts:["比肩、劫財","正財、偏財","正官、七殺","正印、偏印"],ans:3,explain:"生我者為正印和偏印，代表學問、保護、母親。"},
+{q:"「我剋」在十神中包括？",opts:["食神、傷官","正財、偏財","正官、七殺","比肩、劫財"],ans:1,explain:"我剋者為正財和偏財，代表財富、收入、父親。"},
+{q:"自黨包括哪些十神？",opts:["印、劫比","傷食、財才","官殺","全部"],ans:0,explain:"自黨是同我（劫比）和生我（印）的十神。"},
+{q:"異黨包括哪些十神？",opts:["印、劫比","傷食、財才、官殺","只有官殺","只有財才"],ans:1,explain:"異黨是剋我（官殺）、我剋（財才）、我生（傷食）的十神。"},
+{q:"身旺者應以什麼為喜？",opts:["自黨","異黨","全部十神","不用喜忌"],ans:1,explain:"身旺者以異黨（剋泄耗的十神）為喜，自黨為忌。"},
+{q:"身弱者應以什麼為喜？",opts:["自黨","異黨","全部十神","不用喜忌"],ans:0,explain:"身弱者以自黨（生扶比的十神）為喜，異黨為忌。"},
+{q:"「七殺」又稱什麼？",opts:["偏官","正官","傷官","食神"],ans:0,explain:"七殺又稱偏官，是剋我而陰陽同見的十神。"},
+{q:"女命中，「傷官」代表什麼？",opts:["父母","子女","配偶","財富"],ans:1,explain:"女命以傷官和食神代表子女。"},
+{q:"男命中，「正財」代表什麼？",opts:["父親","母親","妻子","子女"],ans:2,explain:"男命以正財代表妻子，偏財代表父親。"},
+{q:"「食神制殺」是指什麼？",opts:["食神生財","食神剋七殺","食神生官","食神剋印"],ans:1,explain:"食神是正剋七殺的，有食神制住七殺，七殺便不能作惡。"},
+{q:"「梟印奪食」是指什麼？",opts:["正印生食神","偏印剋食神","食神生財","傷官見官"],ans:1,explain:"偏印（梟印）直剋食神，故稱梟印奪食。"},
+{q:"「傷官見官」會有什麼影響？",opts:["大吉大利","主災病、剋夫","升官發財","身體健康"],ans:1,explain:"傷官剋正官，主災病；女命傷官見官，則有剋夫之應。"},
+{q:"十神「偏印」又稱什麼？",opts:["梟印","正印","食神","傷官"],ans:0,explain:"偏印又稱梟印，代表偏門學問、繼母。"}],
+  "quiz6": [{q:"天干五合中，「甲己」合化什麼？",opts:["金","木","水","土"],ans:3,explain:"甲己合化土。天干五合：甲己土、乙庚金、丙辛水、丁壬木、戊癸火。"},
+{q:"天干五合中，「乙庚」合化什麼？",opts:["金","木","水","土"],ans:0,explain:"乙庚合化金。"},
+{q:"天干五合中，「丙辛」合化什麼？",opts:["金","木","水","火"],ans:2,explain:"丙辛合化水。"},
+{q:"天干五合中，「丁壬」合化什麼？",opts:["金","木","水","火"],ans:1,explain:"丁壬合化木。"},
+{q:"天干五合中，「戊癸」合化什麼？",opts:["金","木","水","火"],ans:3,explain:"戊癸合化火。"},
+{q:"地支六合中，「子丑」合化什麼？",opts:["金","木","水","土"],ans:3,explain:"子丑合化土。"},
+{q:"地支六合中，「寅亥」合化什麼？",opts:["金","木","水","土"],ans:1,explain:"寅亥合化木。"},
+{q:"地支六合中，「卯戌」合化什麼？",opts:["金","木","水","火"],ans:3,explain:"卯戌合化火。"},
+{q:"地支六合中，「辰酉」合化什麼？",opts:["金","木","水","土"],ans:0,explain:"辰酉合金。"},
+{q:"地支六合中，「巳申」合化什麼？",opts:["金","木","水","土"],ans:2,explain:"巳申合化水。"},
+{q:"地支六沖中，「子午」相沖代表什麼？",opts:["相生","相剋","方位相對、五行剋戰","相合"],ans:2,explain:"子午相沖是方位相對、五行剋戰，代表動盪、變化。"},
+{q:"地支六沖中，「寅申」相沖是什麼剋戰？",opts:["水火剋戰","金木剋戰","土土朋沖","木火剋戰"],ans:1,explain:"寅申相沖是金木剋戰。"},
+{q:"天干五合的條件之一是？",opts:["隔位相合","鄰干作合","任意兩干","必須同柱"],ans:1,explain:"天干五合必須鄰干作合，如日干與月干、月干與年干。"},
+{q:"地支六合中，「午未」合化什麼？",opts:["金","木","水","火土"],ans:3,explain:"午未合化火土。"},
+{q:"六沖中，「辰戌」相沖屬於？",opts:["水火剋戰","金木剋戰","朋沖（土土）","木火剋戰"],ans:2,explain:"辰戌相沖是朋沖，因主氣同屬土。"},
+{q:"合化後，原本的喜神可能變成？",opts:["仍然是喜神","忌神","無關","消失"],ans:1,explain:"合化後，原本的喜神可能變成忌神，原本的忌神也可能變成喜神。"},
+{q:"天干五合中，五組合化分別是？",opts:["土金水木火","金木水火土","木火土金水","水火土金木"],ans:0,explain:"甲己土、乙庚金、丙辛水、丁壬木、戊癸火。"},
+{q:"地支六沖中，「卯酉」相沖是什麼剋戰？",opts:["水火剋戰","金木剋戰","土土朋沖","木火剋戰"],ans:1,explain:"卯酉相沖是金木剋戰。"},
+{q:"天干五合中，「陰陽之合」是指？",opts:["陽干配陽干","陰干配陰干","一陰一陽相配","任意配對"],ans:2,explain:"五合是陰陽之合，一個陰干配一個陽干，因陰陽相吸而由剋變合。"},
+{q:"地支六合中，「巳亥」暗合是指？",opts:["表面相合","所藏天干相合","方位相對","五行相生"],ans:1,explain:"暗合是表面不合，合在所藏天干，如午亥暗合。"}],
+  "quiz7": [{q:"八字格局主要分為幾大類？",opts:["兩大類","三大類","四大類","五大類"],ans:0,explain:"八字格局只分兩大類：正格和特格。"},
+{q:"「正格」是指什麼？",opts:["全局自黨","全局異黨","有自黨又有異黨","無自黨無異黨"],ans:2,explain:"正格是局內有自黨又有異黨，日主不是身旺就是身弱。"},
+{q:"「特格」包括哪些？",opts:["專旺格和從格","正財格和偏財格","正官格和七殺格","食神格和傷官格"],ans:0,explain:"特格包括專旺格（日主極旺）和從格（日主極弱）。"},
+{q:"定正格衰旺的基本法則叫什麼？",opts:["三審","四柱","五合","六合"],ans:0,explain:"三審即審令、審地、審勢，是定正格衰旺的基本法則。"},
+{q:"「審令」是指審什麼？",opts:["天干","地支","月令","時柱"],ans:2,explain:"審令就是審月令（月提），日元生於自黨月令叫得令。"},
+{q:"「審地」是指審什麼？",opts:["天干","月令","其餘三個地支","時柱"],ans:2,explain:"審地是審其餘三個地支，自黨多叫得地。"},
+{q:"「審勢」是指審什麼？",opts:["地支","月令","其餘三個天干","時柱"],ans:2,explain:"審勢是審其餘三個天干，自黨多叫得勢。"},
+{q:"三審法中，「三失其二以上」代表什麼？",opts:["身旺","身弱","中和","特格"],ans:1,explain:"三失其二以上為身弱，即月令、地支、天干中失去兩個以上的自黨。"},
+{q:"「透干原則」是指什麼？",opts:["天干在地支重見","月令所藏天干透出天干","天干五行相生","天干五行相剋"],ans:1,explain:"透干原則是指月令所藏天干透出天干者秉令。"},
+{q:"「得根原則」是指什麼？",opts:["天干在地支重見","月令透干","天干五行相生","地支五行相剋"],ans:0,explain:"得根原則是指天干在地支重見謂之得根。"},
+{q:"「會局原則」中，地支會局成化後，三支作什麼看？",opts:["三支各看","同一神看","分別看五行","不看"],ans:1,explain:"地支會局成化，三支作同一神看，是自黨則三個自黨。"},
+{q:"「貼身原則」中，哪些位置貼住日元？",opts:["年柱、月柱","坐支、時干、月干","年干、時支","月支、日支"],ans:1,explain:"貼住日元的三個位置：坐支、時干和月干。"},
+{q:"「夾剋原則」會導致什麼結果？",opts:["身弱轉身旺","身旺轉身弱","無變化","特格變正格"],ans:1,explain:"夾剋原則是本來身旺的命局，因自黨遭鄰柱夾剋被剋死，身旺轉身弱。"},
+{q:"專旺格是指什麼？",opts:["全局異黨","全局自黨","有自黨有異黨","無自黨無異黨"],ans:1,explain:"專旺格是全局自黨，日主旺極。"},
+{q:"從格是指什麼？",opts:["全局異黨","全局自黨","有自黨有異黨","無自黨無異黨"],ans:0,explain:"從格是全局異黨，日主衰極。"},
+{q:"「假專旺格」是指什麼？",opts:["完全自黨","有一個異黨但無根或被剋死","完全異黨","有自黨有異黨"],ans:1,explain:"假專旺格是全局除一個天干或地支是異黨，其餘都是自黨，但該異黨無根或不透。"},
+{q:"「假從格」是指什麼？",opts:["完全異黨","有一個自黨但無根或被剋死","完全自黨","有自黨有異黨"],ans:1,explain:"假從格是全局除一個自黨外都是異黨，但該自黨無根或不透。"},
+{q:"定正格衰旺時，如果用身旺算錯了，最後板斧是？",opts:["放棄","用身弱再算一次","請教高人","看風水"],ans:1,explain:"最後板斧是「自行了斷」——用身弱再算一次，將喜神忌神掉換。"},
+{q:"「審令」中，甲乙日元生於什麼月叫得令？",opts:["財月","官殺月","印月或劫比月","傷食月"],ans:2,explain:"甲乙日元生於印（亥子）月以及劫比（寅卯）月，就是得令。"},
+{q:"三審法的基本原則是？",opts:["令、地、勢三得其二為身旺","令、地、勢三失其二為身弱","兩者皆是","兩者皆非"],ans:2,explain:"令、地、勢三失其二以上為身弱；三得其二可能身旺。"}],
+  "quiz8": [{q:"「通關用神」的作用是什麼？",opts:["剋泄耗","使氣流通","生扶比","合化變質"],ans:1,explain:"通關用神是當命局兩行對峙、氣勢不通時，取通關之神使氣流通。"},
+{q:"財才剋印時，什麼是通關用神？",opts:["食神","傷官","官殺","劫比"],ans:2,explain:"財才剋印，官殺是通關用神——因為財才生官殺，官殺生印。"},
+{q:"官殺剋劫比時，什麼是通關用神？",opts:["財才","印","傷官","食神"],ans:1,explain:"官殺剋劫比，印是通關用神——因為官殺生印，印生劫比。"},
+{q:"印剋傷食時，什麼是通關用神？",opts:["財才","官殺","劫比","比肩"],ans:2,explain:"印剋傷食，劫比是通關用神——因為印生劫比，劫比生傷食。"},
+{q:"「調候用神」主要是根據什麼判斷？",opts:["五行數量","月令氣候","天干數量","地支數量"],ans:1,explain:"調候用神是根據日主生於何月的氣候寒暖來判斷喜用。"},
+{q:"甲木生於冬令（亥子月），調候用神是？",opts:["水","金","火","木"],ans:2,explain:"甲木生於冬令，木寒要用火暖，丙就是調候用神。"},
+{q:"金生於夏令（巳午月），調候用神是？",opts:["火","木","水","土"],ans:2,explain:"金生於夏令，烈火熔金，就要用水調候，壬就是調候之神。"},
+{q:"「病藥用神」中，「病」是指什麼？",opts:["生病","八字格局的缺陷","壞運氣","犯太歲"],ans:1,explain:"病是指八字格局有「病」，缺五行是其中一種病。"},
+{q:"「病中如得藥，財祿兩相隨」是什麼意思？",opts:["生病會發財","有病有藥是好命","生病要吃藥","病會自動好"],ans:1,explain:"有病有藥是好命的象徵，歲運見藥便是發財之時。"},
+{q:"八字五行欠木，什麼是「藥」？",opts:["水","金","木","火"],ans:2,explain:"五行欠木就是病，木就是藥。當歲運見木（甲乙寅卯），就是藥到病除。"},
+{q:"「病藥用神」也即是什么原理的喜忌用神？",opts:["調候原理","扶抑原理","合化原理","沖合原理"],ans:1,explain:"病藥用神也即是扶抑原理的喜忌用神——身旺宜剋泄，身弱宜幫扶。"},
+{q:"改名用病藥原理，五行欠水應改什麼偏旁的名字？",opts:["金字旁","木字旁","三點水","火字旁"],ans:2,explain:"五行欠水，改個三點水的名字；欠金改金字旁；欠木改木字旁。"},
+{q:"專旺格的喜忌與什麼相同？",opts:["正格身旺","正格身弱","從格","無規律"],ans:1,explain:"專旺和假專旺都以自黨為喜神，異黨為忌神，與身弱相同。"},
+{q:"從格的喜忌與什麼相同？",opts:["正格身旺","正格身弱","專旺格","無規律"],ans:0,explain:"從格以異黨傷食、財才、官殺為喜神，與身旺相同。"},
+{q:"調候用神在什麼情況下容易捉錯？",opts:["正格身旺得令","正格身弱得令","特格","任何情況"],ans:1,explain:"遇到正格身弱但得令的八字時，調候就一定會捉錯用神。"},
+{q:"「通關用神」在歲運出現時，通常代表什麼？",opts:["凶禍","轉危為安","平淡","退步"],ans:1,explain:"通關用神在歲運出現時，通常伴隨轉危為安、化險為夷的事情。"},
+{q:"病藥用神的「病」還包括什麼？",opts:["五行太多","身旺病或身弱病","天干太多","地支太多"],ans:1,explain:"另一種病是正格的身旺病或身弱病——身旺宜剋泄，身弱宜幫扶。"},
+{q:"調候用神的主要依據是什麼？",opts:["天干五行","日主五行相對於月令的氣候","地支數量","十神數量"],ans:1,explain:"調候用神是以日主五行相對於月令的寒熱冷暖濕燥作為喜用依據。"},
+{q:"「五行和者，一世無災」出自哪本古書？",opts:["三命通會","子平真詮","滴天髓","窮通寶鑑"],ans:2,explain:"《滴天髓》云：「五行和者，一世無災。」"},
+{q:"病藥用神的「藥」在歲運中出現代表什麼？",opts:["凶禍","病除福至","平淡","退步"],ans:1,explain:"當歲運遇到「藥」的時候，病便會痊癒了，財祿兩相隨。"}],
+  "quiz9": [{q:"好命四條件的第一個是？",opts:["用神有力","五行中和","少剋沖刑","秀氣流行"],ans:1,explain:"好命四條件：1.五行中和、2.秀氣流行、3.用神有力、4.少剋沖刑伏合。"},
+{q:"「秀氣流行」是指什麼？",opts:["五行相剋","天干地支八字沿一個方向順或逆生下去","五行相沖","天干地支相合"],ans:1,explain:"秀氣流行是天干地支八個字繞成一圈，沿一個方向順或逆生下去。"},
+{q:"判斷富命時，正格身旺以什麼代表財富？",opts:["劫比","印星","正財和偏財","官殺"],ans:2,explain:"正格身旺以正財和偏財代表財富。"},
+{q:"判斷富命時，正格身弱以什麼代表財富？",opts:["正財和偏財","劫財和比肩","印星","官殺"],ans:1,explain:"正格身弱以劫財和比肩代表財富。"},
+{q:"專旺格以什麼代表財富？",opts:["正財和偏財","劫財和比肩","印星","官殺"],ans:1,explain:"專旺和假專旺以劫財和比肩代表財富。"},
+{q:"從格以什麼代表財富？",opts:["正財和偏財","劫財和比肩","印星","食神"],ans:0,explain:"從格和假從格以正財和偏財代表財富。"},
+{q:"「喜神為輔弼」是指什麼？",opts:["一個喜神","兩個相鄰的喜神","三個喜神","無喜神"],ans:1,explain:"喜神為輔弼是指命局中要有喜神，而且要一輔一弼（兩個相鄰的喜神）。"},
+{q:"「忌神輾轉攻」是指什麼？",opts:["一個忌神","歲運忌神齊見","無忌神","忌神被剋"],ans:1,explain:"忌神輾轉攻是歲運忌神齊見，將喜神剋死時便凶。"},
+{q:"《滴天髓》云：「何知其人吉」下一句是？",opts:["忌神輾轉攻","喜神為輔弼","五行中和","秀氣流行"],ans:1,explain:"《滴天髓》云：「何知其人吉，喜神為輔弼。」"},
+{q:"六親中，「印」代表什麼？",opts:["妻/父","母","子女","兄弟"],ans:1,explain:"印代表母，若被重財剋破，斷為母緣薄。"},
+{q:"六親中，「正財」代表什麼？",opts:["父/母","妻（男命）","子女（男命）","兄弟"],ans:1,explain:"正財代表妻子（男命），偏財代表父親。"},
+{q:"六親中，「官殺」代表什麼（男命）？",opts:["妻子","父母","子女","兄弟"],ans:2,explain:"男命以官殺代表子女。"},
+{q:"六親中，「傷食」代表什麼（女命）？",opts:["丈夫","父母","子女","財富"],ans:2,explain:"女命以傷食代表子女。"},
+{q:"財運判斷中，身旺歲運見什麼主財至？",opts:["劫比","印星","財星透有根","官殺"],ans:2,explain:"身旺歲運財透有根，主財至。"},
+{q:"財運判斷中，身弱歲運見什麼主財至？",opts:["財星透有根","劫比透有根","印星透有根","官殺透有根"],ans:1,explain:"身弱歲運劫比透有根，主財至。"},
+{q:"婚姻判斷中，女命見什麼歲運緣至？",opts:["財才","官殺","印星","劫比"],ans:1,explain:"女命見官殺歲運緣至，或天地合入日柱。"},
+{q:"婚姻判斷中，男命見什麼歲運緣至？",opts:["官殺","財才","印星","劫比"],ans:1,explain:"男命見財才歲運緣至，或天地合入日柱。"},
+{q:"健康判斷中，身弱再遇傷食財才重泄主什麼？",opts:["血光手術","慢性病","意外","健康"],ans:1,explain:"身弱再遇傷食財才重泄，主慢性病。"},
+{q:"健康判斷中，財生官殺重剋日主主什麼？",opts:["慢性病","血光手術","意外","健康"],ans:1,explain:"財生官殺重剋日主，是血光手術。"},
+{q:"「少剋沖刑伏合」中的「伏吟」是指什麼？",opts:["兩柱干支字字相同","天干相剋","地支相沖","天干相合"],ans:0,explain:"伏吟即兩柱干支字字相同，如甲子又逢甲子。"}],
+};
+
+// Render quizzes
+Object.keys(quizzes).forEach(qid => {
+  const container = document.getElementById(qid);
+  if (!container) return;
+  const qs = quizzes[qid];
+  qs.forEach((q, qi) => {
+    let h = `<div class="quiz-q" data-i="${qi}">
+      <label>${qi+1}. ${q.q}</label>`;
+    q.opts.forEach((opt, oi) => {
+      h += `<span class="quiz-opt" onclick="selOpt(this,${qi},${oi},'${qid}')">${String.fromCharCode(65+oi)}. ${opt}</span>`;
+    });
+    h += `<div class="explain" id="${qid}_e${qi}">${q.explain}</div></div>`;
+    container.innerHTML += h;
+  });
+  container.innerHTML += `<button class="check-btn" onclick="chk('${qid}')">提交答案</button>
+    <div class="score-bar" id="${qid}_s"></div>`;
+});
+
+const sel = {};
+function selOpt(el, qi, oi, qid) {
+  sel[`${qid}_${qi}`] = oi;
+  el.closest('.quiz-q').querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function chk(qid) {
+  const qs = quizzes[qid];
+  let c = 0;
+  qs.forEach((q, qi) => {
+    const s = sel[`${qid}_${qi}`];
+    document.querySelectorAll(`#${qid} .quiz-q[data-i="${qi}"] .quiz-opt`).forEach((o, oi) => {
+      o.classList.remove('selected');
+      if (oi === q.ans) o.classList.add('correct');
+      else if (oi === s) o.classList.add('wrong');
+    });
+    if (s === q.ans) c++;
+    document.getElementById(`${qid}_e${qi}`).classList.add('show');
+  });
+  const sc = document.getElementById(`${qid}_s`);
+  const pct = Math.round(c/qs.length*100);
+  const msg = pct === 100 ? '🌟 滿分，完美掌握本課！' : pct >= 80 ? '👍 優良成績，再鞏固一下！' : pct >= 60 ? '🙂 合格，請複習重點內容。' : '💪 建議重溫本課再試一次。';
+  sc.textContent = `得分：${c}/${qs.length}（${pct}%）— ${msg}`;
+  sc.classList.add('show');
+  sc.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+function showLevel(lv, el) {
+  document.querySelectorAll('.level-content').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.level-tab').forEach(x => x.classList.remove('active'));
+  document.getElementById(lv).classList.add('active');
+  el.classList.add('active');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+function toTop() { window.scrollTo({top:0,behavior:'smooth'}); }
+function openMenu() { document.getElementById('drawer').classList.add('open'); document.getElementById('ovl').classList.add('show'); }
+function closeMenu() { document.getElementById('drawer').classList.remove('open'); document.getElementById('ovl').classList.remove('show'); }
+
+</script>
+</body>
+</html>
